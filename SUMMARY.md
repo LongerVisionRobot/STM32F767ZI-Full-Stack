@@ -5,8 +5,8 @@
 -----
 * [Part 1 - Introduction](Part1_Introduction/README.md)
 1. [Chapter 1. Getting Started with STM32](Part1_Introduction/01_Getting_Started_with_STM32/README.md)
-    * [1.1 About STM32 F767](Part1_Introduction/01_Getting_Started_with_STM32/01_raspberry_pi_3b.md)
-    * [1.2 About STM32 F767](Part1_Introduction/01_Getting_Started_with_STM32/02_onlineresource.md)
+    * [1.1 About STM32 F767](Part1_Introduction/01_Getting_Started_with_STM32/01_stm32_F767.md)
+    * [1.2 STM32 Nucleo-144 Development Board with STM32F767ZI](Part1_Introduction/01_Getting_Started_with_STM32/02_Nucleo-144_STM32F767ZI.md)
     * [1.3 Install Raspbian onto a STM32 3B](Part1_Introduction/01_Getting_Started_with_STM32/03_raspbian_installation.md)
     * [1.4 STM32 Configuration](Part1_Introduction/01_Getting_Started_with_STM32/04_basic_configuration.md)
     * [1.5 Network Configuration](Part1_Introduction/01_Getting_Started_with_STM32/05_network_configuration.md)
