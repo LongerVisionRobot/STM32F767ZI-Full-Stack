@@ -1,4 +1,4 @@
-# 1.7 FIRST Arduino Project - "Hello World"
+# 2.2 FIRST STM32 Project - LED Blinking
 
 As any other programming languages, our first Arduino Project is also "Hello World", without hardware wiring. The code is of standard Arduino coding convention, namely, composed of a **setup()** function and a **loop()** function.
 

@@ -1,4 +1,4 @@
-# 1.5 Arduino Online Resource
+# 1.5 STM32 Online Resource
 
 ## 1.3.1 Official Websites
 * [https://www.arduino.cc/](https://www.arduino.cc/)
