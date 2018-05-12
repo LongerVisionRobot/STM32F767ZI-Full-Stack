@@ -1,3 +1,3 @@
-# Chapter 2 - Programming Grammar
+# Chapter 2 - Programming for STM32
 
-In this chapter, we are going to talk about the programming grammar for Arduino, namely, AVR C, in detail.
+In this chapter, we are going to talk about how to program for a STM32, in detail.
