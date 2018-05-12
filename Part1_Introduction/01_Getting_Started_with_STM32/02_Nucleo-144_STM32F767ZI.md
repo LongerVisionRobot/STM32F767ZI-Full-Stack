@@ -1,4 +1,4 @@
- # 1.3 STM32 Nucleo-144 Development Board with STM32F767ZI
+ # 1.2 STM32 Nucleo-144 Development Board with STM32F767ZI
 
 According to ST's official website [http://www.st.com/en/evaluation-tools/nucleo-f767zi.html](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html),
 
@@ -18,9 +18,4 @@ Students are welcome to puchase the kit from our website at [http://www.longervi
 Nucleo-144 evaluation board with STM32F767ZI looks like the following image:
 
 ![Image](./nucleo-144.jpg)
-
-
-Two Arduino official websites about Arduino UNO R3 are recommended: 
-* [https://www.arduino.cc/en/Reference/Board](https://www.arduino.cc/en/Reference/Board)
-* [http://www.arduino.org/products/boards/arduino-uno](http://www.arduino.org/products/boards/arduino-uno)
 
