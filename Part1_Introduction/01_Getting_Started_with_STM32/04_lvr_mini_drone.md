@@ -19,9 +19,8 @@ Screw & Nut | <center>some</center> | |
 Nylon Column | <center>some</center> | |  
 Electrical Wire | <center>some</center> | |   
 
-<p align="center">
 
 ![Image](./race_car_chassis.jpg)
 
-</p>
+
 
