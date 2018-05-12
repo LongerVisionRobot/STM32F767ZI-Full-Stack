@@ -1,8 +1,14 @@
  # 1.3 STM32 Nucleo-144 Development Board with STM32F767ZI
 
 
-Students who take our Arduino course on-site will be given a **FREE** proprietary Arduino exntension board designed by [Longer Vision Robot](http://www.longervisionrobot.com). Students are welcome to puchase the kit from our website at [http://www.st.com/en/evaluation-tools/nucleo-f767zi.html](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html). 
+Students who take our STM32 course on-site will be given a **FREE** Nucleo-144 development board with STM32F767ZI. 
 
-The proprietary Arduino exntension board designed by [Longer Vision Robot](http://www.longervisionrobot.com) can be plugged into the Arduino UNO R3 directly, which looks like:
+Students are welcome to puchase the kit from our website at [http://www.longervisionrobot.com/en-us/products/stm32f767zi.html](http://www.longervisionrobot.com/en-us/products/stm32f767zi.html). 
 
-![Image](./LVR_Arduino_Vehicle.jpg)
+Cannonical STM32F767ZI looks like the following image:
+![Image](./arduino-uno-r3.jpg)
+
+Two Arduino official websites about Arduino UNO R3 are recommended: 
+* [https://www.arduino.cc/en/Reference/Board](https://www.arduino.cc/en/Reference/Board)
+* [http://www.arduino.org/products/boards/arduino-uno](http://www.arduino.org/products/boards/arduino-uno)
+
