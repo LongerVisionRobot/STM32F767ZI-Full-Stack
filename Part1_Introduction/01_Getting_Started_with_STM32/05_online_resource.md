@@ -44,4 +44,8 @@ The following Arduino Cheat Sheet is cited from [http://robodino.org/resources/a
 The following Evolution Tree for Arduino is cited from
 [http://imgur.com/yGRLPvL](http://imgur.com/yGRLPvL).
 
+<p align="center">
+
 ![Image](./yGRLPvL.jpg)
+
+</p>

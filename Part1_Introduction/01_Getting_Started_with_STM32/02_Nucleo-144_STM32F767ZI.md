@@ -9,7 +9,9 @@ Students are welcome to puchase the kit from our website at [http://www.longervi
 Cannonical STM32F767ZI looks like the following image:
 
 <p align="center">
+
 ![Image](./nucleo-144.jpg)
+
 </p>
 
 Two Arduino official websites about Arduino UNO R3 are recommended: 
