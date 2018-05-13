@@ -14,3 +14,4 @@ Elastic | <center>1</center> | |
 
 
 ![Image](./lvr_mini_drone_parts.jpg)
+
