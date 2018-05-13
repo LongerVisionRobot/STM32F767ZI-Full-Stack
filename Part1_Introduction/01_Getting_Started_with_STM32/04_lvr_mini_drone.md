@@ -1,6 +1,6 @@
 # 1.4 LVR Mini Drone
 
-Students who take our Arduino course on-site will be given a **FREE** full set of race car chassis model. Students are also welcome to puchase the kits from our website at [http://www.longervisionrobot.com/en-us/products/race-car-chassis](http://www.longervisionrobot.com/en-us/products/race-car-chassis). A full set of race car chassis model from [Longer Vision Robot](http://www.longervisionrobot.com) contains:
+Students who take our mini drone course on-site will be given a **FREE** full set of drone with remote controller. Students are also welcome to puchase the kits from our website at [http://www.longervisionrobot.com/en-us/products/drone](http://www.longervisionrobot.com/en-us/products/drone). A full set of drone with remote controller from [Longer Vision Robot](http://www.longervisionrobot.com) contains:
 
 Item | No. of Pieces | Model | Features   
 --------- | ------- | -------- | -------------
@@ -20,7 +20,7 @@ Nylon Column | <center>some</center> | |
 Electrical Wire | <center>some</center> | |   
 
 
-![Image](./race_car_chassis.jpg)
+![Image](./lvr_drone.jpg)
 
-
+![Image](./lvr_drone_controller.jpg)
 

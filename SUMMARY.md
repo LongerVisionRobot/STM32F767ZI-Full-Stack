@@ -7,7 +7,7 @@
 1. [Chapter 1. Getting Started with STM32](Part1_Introduction/01_Getting_Started_with_STM32/README.md)
     * [1.1 About STM32F767ZI](Part1_Introduction/01_Getting_Started_with_STM32/01_STM32F767ZI.md)
     * [1.2 STM32 Nucleo-144 Development Board with STM32F767ZI](Part1_Introduction/01_Getting_Started_with_STM32/02_Nucleo-144_STM32F767ZI.md)
-    * [1.3 Sensor Kits for STM32](Part1_Introduction/01_Getting_Started_with_STM32/03_drone_parts.md)
+    * [1.3 Sensor Kits for STM32](Part1_Introduction/01_Getting_Started_with_STM32/03_sensors.md)
     * [1.4 LVR Mini Drone](Part1_Introduction/01_Getting_Started_with_STM32/04_lvr_mini_drone.md)
     * [1.5 STM32 Online Resource](Part1_Introduction/01_Getting_Started_with_STM32/05_online_resource.md)
 2. [Chapter 2. Programming for STM32](Part1_Introduction/02_Programming_for_STM32/README.md)
