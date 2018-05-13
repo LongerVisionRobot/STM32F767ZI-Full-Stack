@@ -17,5 +17,5 @@ Students are welcome to puchase the kit from our website at [http://www.longervi
 
 Nucleo-144 evaluation board with STM32F767ZI looks like the following image:
 
-![Image](./nucleo-144.jpg)
+![Nucleo-144 evaluation board with STM32F767ZI](./nucleo-144.jpg)
 
