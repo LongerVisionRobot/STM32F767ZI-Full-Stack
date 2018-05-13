@@ -11,3 +11,6 @@ Rotor Wing | <center>4</center> | |
 Rotor Wing Protector | <center>4</center> | | 
 Puller | <center>1</center> | | 
 Elastic | <center>1</center> | | 
+
+
+![Image](./lvr_mini_drone_parts.jpg)
