@@ -7,7 +7,7 @@ The proprietary mini drone board designed by [Longer Vision Robot](http://www.lo
 
 ![LVR Mini Drone](./lvr_mini_drone.jpg)
 
-[Longer Vision Robot](http://www.longervisionrobot.com) also provides a proprietary remote controller, which is also based on a [STM32F103](http://www.st.com/en/microcontrollers/stm32f103.html) chip. Its front and back views are as follows:
+[Longer Vision Robot](http://www.longervisionrobot.com) also provides a proprietary remote controller, which is also based on a [STM32F103](http://www.st.com/en/microcontrollers/stm32f103.html) chip. Its front and back views are respectively as follows:
 
 
 ![LVR Mini Drone Controller - Front View](./lvr_mini_drone_controller_front.jpg)
