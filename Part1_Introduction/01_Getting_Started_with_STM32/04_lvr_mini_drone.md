@@ -4,23 +4,19 @@ Students who take our mini drone course on-site will be given a **FREE** full se
 
 Item | No. of Pieces | Model | Features   
 --------- | ------- | -------- | -------------
-Acrylic plate | <center>2</center> | | 
-Wheels | <center>4</center> | | 
-DC Gear Motor | <center>4</center> | <center>L298N</center> | <center>DC 3V~6V</center> 
-Speed ​​Encoder | <center>4</center> | |  
-Speed Sensor | <center>2</center> | |  
-Tracking Sensor | <center>4</center> | |  
-Ultrasonic Sensor | <center>1</center> |  <center>HY-SRF04/HY-SRF05</center> |  
-Wifi | <center>1</center> | |  
-Bluetooth | <center>1</center> | <center>ZS-040</center> |  
-Battery | <center>2</center> | <center>18650</center> |  
-Cradle Head | <center>1</center> | |  
-Screw & Nut | <center>some</center> | | 
-Nylon Column | <center>some</center> | |  
-Electrical Wire | <center>some</center> | |   
+Radio  | <center>2</center> | | 380mAh, 3.7V
+FC Power | <center>2</center> | | 380mAh, 3.7V
+Elastic | <center>1</center> | | 
+
+ 
 
 
-![Image](./lvr_drone.jpg)
+![Image](./lvr_mini_drone_parts.jpg)
 
-![Image](./lvr_drone_controller.jpg)
+![Image](./lvr_mini_drone.jpg)
 
+![Image](./lvr_mini_drone_controller_front.jpg)
+
+![Image](./lvr_mini_drone_controller_front_poweron.jpg)
+
+![Image](./lvr_mini_drone_controller_back.jpg)
