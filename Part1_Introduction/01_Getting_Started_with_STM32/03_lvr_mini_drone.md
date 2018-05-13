@@ -15,4 +15,6 @@ The proprietary mini drone board designed by [Longer Vision Robot](http://www.lo
 ![LVR Mini Drone Controller - Back View](./lvr_mini_drone_controller_back.jpg)
 
 
-![Image](./lvr_mini_drone_controller_front_poweron.jpg)
+We can power on the remote controller with the provided battery and have a look at its front view again:
+
+![LVR Mini Drone Controller - Front View When Powered On](./lvr_mini_drone_controller_front_poweron.jpg)
