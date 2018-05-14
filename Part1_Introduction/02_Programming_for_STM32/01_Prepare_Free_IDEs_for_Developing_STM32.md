@@ -24,10 +24,19 @@ According to our summation, four things are to be installed:
 
 #### A. Install Eclipse Plug-in
 
+Currently, if you install the plugin from within Eclipse by providing the plugin's update site URL [http://gnu-mcu-eclipse.netlify.com/v4-neon-updates](http://gnu-mcu-eclipse.netlify.com/v4-neon-updates), you will possibly meet the following error message:
 
+![GNU MCU Eclipse Plugin Content.xml Missing](GNU_MCU_Eclipse_Plugin_Content_XML_Missing.jpg)
+
+Therefore, we have this Eclipse Plugin installed from within Eclipse MarketPlace as follows:
+
+![GNU MCU Eclipse Marketplace](GNU_MCU_Eclipse_MarketPlace.jpg)
 
 #### B. Install ARM Toolchain
 
+It's clearly summarized in [https://gnu-mcu-eclipse.github.io/toolchain/arm/install/](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/) that there are 2 ways to carry out the installation for GNU MCU Eclipse ARM Embedded GCC: **The xPack install** and **Manual install**.
+
+**The manual install** is strongly recommended. You **ONLY** need to visit [GNU MCU Eclipse ARM Embedded GCC](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases), and download the corresponding file. [gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.1-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz) is downloaded and extracted under **/opt/GCCToolChains** in our case.
 
 
 #### C. Install J-Link
