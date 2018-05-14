@@ -6,5 +6,5 @@ According to ST's official website [http://www.st.com/en/microcontrollers/stm32-
 STM32's Ecosystem can be summarized as:
 
 
-![Image](http://www.st.com/content/ccc/fragment/product_related/class_information/class_level_diagram/group0/1b/96/39/54/20/23/46/bf/stm32_cl1734/files/stm32_cl1734.jpg/_jcr_content/translations/en.stm32_cl1734.jpg)
+![STM32 32-bit ARM Cortex MCUs and STM32 Ecosystem](http://www.st.com/content/ccc/fragment/product_related/class_information/class_level_diagram/group0/1b/96/39/54/20/23/46/bf/stm32_cl1734/files/stm32_cl1734.jpg/_jcr_content/translations/en.stm32_cl1734.jpg)
 
