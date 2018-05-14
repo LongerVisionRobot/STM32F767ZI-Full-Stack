@@ -7,6 +7,17 @@ It's supposed that students have already installed [Eclipse](https://www.eclipse
 According to [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/):
 > GNU MCU Eclipse is an open source project that includes a family of Eclipse plug-ins and tools for multi-platform embedded [ARM](https://www.arm.com/) and [RISC-V](https://riscv.org/) development, based on GNU toolchains. This project is hosted on [GitHub](https://github.com/gnu-mcu-eclipse). The former project was hosted on [GitHub](https://github.com/gnuarmeclipse) and [SourceForge](http://sourceforge.net/projects/gnuarmeclipse/).
 
+The right-hand sidebar on [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) clearly summarizes what's needed to be installed, as in the following image:
+
+![GNU MCU Eclipse: What's To Be Installed](./GNU_MCU_Eclipse_2B_Installed.jpg)
+
+Four things are to be installed:
+* [Eclipse Plug-in](https://gnu-mcu-eclipse.github.io/plugins/download/)
+* [ARM toolchain](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/)
+* [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
+* [ST-Link](https://github.com/texane/stlink)
+
+
 [Github Eclipse Plugins](https://github.com/gnu-mcu-eclipse/eclipse-plugins)
 
 

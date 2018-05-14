@@ -13,5 +13,5 @@
     * [1.6 STM32 Online Resource](Part1_Introduction/01_Getting_Started_with_STM32/06_online_resource.md)
 2. [Chapter 2. Programming for STM32](Part1_Introduction/02_Programming_for_STM32/README.md)
     * [2.1 Prepare Free IDEs for Developing STM32](Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md)
-    * [2.2 FIRST STM32 Project - LED Blinking](Part1_Introduction/02_Programming_for_STM32/02_led_blinking.md)
+    * [2.2 FIRST STM32 Project - Hello World](Part1_Introduction/02_Programming_for_STM32/02_hello_world.md)
 
