@@ -19,3 +19,17 @@ void loop() {
 ## Verify & Compile
 
 In Arduino IDe, to compile the above codes, click **Sketch->Verify/Compile**; to upload the code onto Arduino board afterwards, click **Sketch->Upload**.
+
+![Eclipse New Projects](./Eclipse_New_Projects.jpg)
+
+
+![Eclipse Create STM32FXX Projects](./Eclipse_New_Projects_STM32F7XX.jpg)
+
+
+![Eclipse Target Processor Settings](Eclipse_Target_Processor_Settings.jpg)
+
+
+![Eclipse Folders Settings](Eclipse_Folders_Settings.jpg)
+
+
+
