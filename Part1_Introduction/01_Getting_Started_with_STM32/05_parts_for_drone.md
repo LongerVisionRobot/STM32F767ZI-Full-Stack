@@ -13,5 +13,5 @@ Puller | <center>1</center> | |
 Elastic | <center>1</center> | | 
 
 
-![Image](./lvr_mini_drone_parts.jpg)
+![LVR Mini Drone Parts](./lvr_mini_drone_parts.jpg)
 
