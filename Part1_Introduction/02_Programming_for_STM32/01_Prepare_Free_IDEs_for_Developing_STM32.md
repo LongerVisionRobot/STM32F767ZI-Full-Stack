@@ -22,8 +22,19 @@ According to our summation, four things are to be installed:
 * [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
 * [ST-Link](https://github.com/texane/stlink)
 
+#### A. Install Eclipse Plug-in
 
-[Github Eclipse Plugins](https://github.com/gnu-mcu-eclipse/eclipse-plugins)
+
+
+#### B. Install ARM Toolchain
+
+
+
+#### C. Install J-Link
+
+
+
+#### D. Install ST-Link
 
 
 
@@ -31,5 +42,5 @@ According to our summation, four things are to be installed:
 
 To install the free IDE [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html), [ST's official website](http://www.st.com/en/development-tools/sw4stm32.html) is redirected to [OpenSTM32](http://www.openstm32.org/). Users must first register on [OpenSTM32](http://www.openstm32.org/), and then strictly follow [Installing System Workbench for STM32](http://www.openstm32.org/Installing%2BSystem%2BWorkbench%2Bfor%2BSTM32).
 
-Since we are going to use [2.1.1 GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) through out our course, we are **NOT** going to elaborate the details on how to carry out the development for STM32 using [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html).
+Since we are going to use [2.1.1 GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) throughout our course, we are **NOT** going to elaborate how to carry out the development for STM32 using [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html).
 
