@@ -56,6 +56,23 @@ The J-Link binaries are available at [SEGGER](http://www.segger.com/jlink-softwa
 
 #### D. Install ST-Link
 
+The reason why we need to install [ST-Link](https://github.com/texane/stlink) is that [Nucleo-144 board with STM32F767ZI](../../Part1_Introduction/01_Getting_Started_with_STM32/02_Nucleo-144_STM32F767ZI.md) comes with a ST-Link on board. The processes on how to checkout and build the source code are clearly displayed by the following commands:
+```
+$ git clone git@github.com:jiapei100/stlink.git
+$ cd stlink
+$ mkdir build
+$ cd build
+$ ccmake ../
+$ make -j8
+$ sudo checkinstall --fstrans=no
+```
+
+Four **exe** files are respectively installed as:
+* /usr/local/bin/st-flash
+* /usr/local/bin/st-info
+* /usr/local/bin/st-util
+* /usr/local/bin/stlink-gui
+
 
 
 ## 2.1.2 SW4STM32 (System Workbench for STM32)
