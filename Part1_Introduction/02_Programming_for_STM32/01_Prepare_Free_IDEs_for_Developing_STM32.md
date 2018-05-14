@@ -36,11 +36,22 @@ Therefore, we have this Eclipse Plugin installed from within Eclipse MarketPlace
 
 It's clearly summarized in [https://gnu-mcu-eclipse.github.io/toolchain/arm/install/](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/) that there are 2 ways to carry out the installation for GNU MCU Eclipse ARM Embedded GCC: **The xPack install** and **Manual install**.
 
-**The manual install** is strongly recommended. You **ONLY** need to visit [GNU MCU Eclipse ARM Embedded GCC](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases), and download the corresponding file. [gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.1-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz) is downloaded and extracted under **/opt/GCCToolChains** in our case.
+**The manual install** is strongly recommended. You **ONLY** need to visit [GNU MCU Eclipse ARM Embedded GCC](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases), and download the corresponding file. [gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.1-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz) is downloaded and extracted under **/opt/GCCToolChains** in our case. Let's have a look at what files are under the ARM toolchain folder:
+
+```
+/opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7.2.1-1.1-20180401-0515/bin$ ls
+arm-none-eabi-addr2line  arm-none-eabi-elfedit    arm-none-eabi-gcc-ranlib  arm-none-eabi-gprof    arm-none-eabi-ranlib
+arm-none-eabi-ar         arm-none-eabi-g++        arm-none-eabi-gcov        arm-none-eabi-ld       arm-none-eabi-readelf
+arm-none-eabi-as         arm-none-eabi-gcc        arm-none-eabi-gcov-dump   arm-none-eabi-ld.bfd   arm-none-eabi-size
+arm-none-eabi-c++        arm-none-eabi-gcc-7.2.1  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
+arm-none-eabi-c++filt    arm-none-eabi-gcc-ar     arm-none-eabi-gdb         arm-none-eabi-objcopy  arm-none-eabi-strip
+arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-none-eabi-objdump
+```
 
 
 #### C. Install J-Link
 
+The J-Link binaries are available at [SEGGER](http://www.segger.com/jlink-software.html). In our case, **DEB installer 64-bit** is to be downloaded from [https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb](https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb). And to install it, we **ONLY** need to double-click this **deb** file under Ubuntu.
 
 
 #### D. Install ST-Link
