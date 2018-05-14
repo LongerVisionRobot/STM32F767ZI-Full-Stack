@@ -2,7 +2,7 @@
 
 ## 2.1.1 GNU MCU Eclipse
 
-It's supposed that students have already installed [Eclipse](https://www.eclipse.org). For the time being, the most recent Eclipse release is [Eclipse Oxygen 3A](https://www.eclipse.org/downloads/packages/release/Oxygen/3A), and what we are downloading is [Eclipse IDE for C/C++ Developers - Linux 64-bit](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz).
+It's supposed that students have already installed [Eclipse](https://www.eclipse.org). For the time being, the most recent Eclipse release is [Eclipse Oxygen 3A](https://www.eclipse.org/downloads/packages/release/Oxygen/3A), and what we are using is [Eclipse IDE for C/C++ Developers - Linux 64-bit](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz).
 
 According to [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/):
 > GNU MCU Eclipse is an open source project that includes a family of Eclipse plug-ins and tools for multi-platform embedded [ARM](https://www.arm.com/) and [RISC-V](https://riscv.org/) development, based on GNU toolchains. This project is hosted on [GitHub](https://github.com/gnu-mcu-eclipse). The former project was hosted on [GitHub](https://github.com/gnuarmeclipse) and [SourceForge](http://sourceforge.net/projects/gnuarmeclipse/).
