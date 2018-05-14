@@ -24,7 +24,7 @@
 ## 1.6.5 Free IDEs to Develop STM32
 * [SW4STM32](http://www.st.com/en/development-tools/sw4stm32.html)
 * [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/)
-* [PlatformIO IDE for VSCode](https://platformio.org/)
+* [PlatformIO IDE for VSCode - Commercial](https://platformio.org/)
 * [MicroPython](http://micropython.org/)
 
 ## 1.6.6 Communities
