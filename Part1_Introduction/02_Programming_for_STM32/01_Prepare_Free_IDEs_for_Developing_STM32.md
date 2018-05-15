@@ -74,6 +74,12 @@ Four **exe** files are respectively installed as:
 * /usr/local/bin/stlink-gui
 
 
+### Step 3: Workspace Preference
+
+Finally, we enable **save automatically before build** and **UTF-8** encoding within **Workspace Preference**.
+
+![image](workspace_preference.jpg)
+
 
 ## 2.1.2 SW4STM32 (System Workbench for STM32)
 
