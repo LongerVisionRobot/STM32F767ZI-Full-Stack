@@ -11,9 +11,9 @@ The proprietary mini drone board designed by [Longer Vision Robot](http://www.lo
 
 On the drone board, one very important chip is integrated:
 
-Item | No. of Pieces | Model | Features   
+<center>Item</center> | <center>No. of Pieces</center> | <center>Model</center> | <center>Features</center>     
 ------- | ------- | -------- | -------------
-IMU | <center>1</center> | <center>MPU 6050</center> | 6 Degrees, gyro + accelerator
+<center>IMU</center> | <center>1</center> | <center>MPU 6050</center> | 6 Degrees, gyro + accelerator
 
 
 ## 1.3.2. Drone Controller
@@ -32,7 +32,7 @@ We can power on the remote controller with the provided battery and have a look 
 
 On the remote controller, two very important parts are integrated:
 
-Item | No. of Pieces | Model | Features   
+<center>Item</center> | <center>No. of Pieces</center> | <center>Model</center> | <center>Features</center>    
 ------- | ------- | -------- | -------------
-Monitor | <center>1</center> | <center></center> | 
-Joystick | <center>2</center> | <center></center> | 
+<center>Monitor</center> | <center>1</center> | <center></center> | 
+<center>Joystick</center> | <center>2</center> | <center></center> | 
