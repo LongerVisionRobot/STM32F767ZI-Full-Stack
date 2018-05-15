@@ -313,7 +313,7 @@
 <h3 id="step-1-steps-to-create-an-project">Step 1: Steps To Create an Project</h3>
 <h4 id="a-create-an-empty-project">A. Create an Empty Project</h4>
 <p><strong>File</strong>-&gt;<strong>New</strong>-&gt;<strong>C/C++ Project</strong>, then click on <strong>C++ Managed Build</strong>:</p>
-<p><img src="Eclipse_01_New_Projects.jpg" alt="Eclipse New Projects"></p>
+<p><img src="Eclipse_01_New_Project.jpg" alt="Eclipse A New Project"></p>
 <p>Then, click <strong>Next</strong>.</p>
 <h4 id="b-select-stm32f7xx-cc-project">B. Select STM32F7XX C/C++ Project</h4>
 <p>In the dialog <strong>C++ Project</strong>,</p>
@@ -321,7 +321,7 @@
 <li>under <strong>Project type:</strong>-&gt;<strong>Executable</strong>, select <strong>STM32F7XX C/C++ Project</strong></li>
 <li>under <strong>Project name:</strong>, input <strong>Hello World</strong></li>
 </ul>
-<p><img src="Eclipse_02_New_Projects_STM32F7XX.jpg" alt="Eclipse Create STM32FXX Projects"></p>
+<p><img src="Eclipse_02_New_Project_STM32F7XX.jpg" alt="Eclipse Create A STM32F7XX Project"></p>
 <p>Then, click <strong>Next</strong>.</p>
 <h4 id="c-target-processor-settings">C. Target Processor Settings</h4>
 <p>In the dialog <strong>Target Processor Settings</strong>&#xFF0C; </p>
@@ -341,10 +341,64 @@
 <p><img src="Eclipse_05_Select_Configurations.jpg" alt="Eclipse Select Configurations"></p>
 <p>Just click <strong>Next</strong>.</p>
 <h4 id="f-gnu-arm-cross-toolchain">F. GNU ARM Cross Toolchain</h4>
+<p>In the dialog <strong>GNU ARM Cross Toolchain</strong>,</p>
+<ul>
+<li>under <strong>Toolchain name:</strong>, select <strong>GNU MCU Eclipse ARM Embedded GCC (arm-none-eabi-gcc)</strong></li>
+<li>under <strong>Toolchain path:</strong>, make sure you put the correct <strong>toolchain directory</strong>. In our case:<pre><code>$ ls /opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7/bin
+arm-none-eabi-addr2line  arm-none-eabi-elfedit    arm-none-eabi-gcc-ranlib  arm-none-eabi-gprof    arm-none-eabi-ranlib
+arm-none-eabi-ar         arm-none-eabi-g++        arm-none-eabi-gcov        arm-none-eabi-ld       arm-none-eabi-readelf
+arm-none-eabi-as         arm-none-eabi-gcc        arm-none-eabi-gcov-dump   arm-none-eabi-ld.bfd   arm-none-eabi-size
+arm-none-eabi-c++        arm-none-eabi-gcc-7.2.1  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
+arm-none-eabi-c++filt    arm-none-eabi-gcc-ar     arm-none-eabi-gdb         arm-none-eabi-objcopy  arm-none-eabi-strip
+arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-none-eabi-objdump
+</code></pre></li>
+</ul>
 <p><img src="Eclipse_06_GNU_ARM_Cross_Toolchain.jpg" alt="Eclipse GNU ARM Cross Toolchain"></p>
 <p>Finally, click <strong>Finish</strong>.</p>
-<h2 id="first-stm32-project---hello-world">FIRST STM32 Project - &quot;Hello World&quot;</h2>
-<p>In Arduino IDe, to compile the above codes, click <strong>Sketch-&gt;Verify/Compile</strong>; to upload the code onto Arduino board afterwards, click <strong>Sketch-&gt;Upload</strong>.</p>
+<h4 id="g">G.</h4>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &quot;diag/Trace.h&quot;
+
+// ----------------------------------------------------------------------------
+//
+// Standalone STM32F7 empty sample (trace via DEBUG).
+//
+// Trace support is enabled by adding the TRACE macro definition.
+// By default the trace messages are forwarded to the DEBUG output,
+// but can be rerouted to any device or completely suppressed, by
+// changing the definitions required in system/src/diag/trace_impl.c
+// (currently OS_USE_TRACE_ITM, OS_USE_TRACE_SEMIHOSTING_DEBUG/_STDOUT).
+//
+
+// ----- main() ---------------------------------------------------------------
+
+// Sample pragmas to cope with warnings. Please note the related line at
+// the end of this function, used to pop the compiler diagnostics status.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored &quot;-Wunused-parameter&quot;
+#pragma GCC diagnostic ignored &quot;-Wmissing-declarations&quot;
+#pragma GCC diagnostic ignored &quot;-Wreturn-type&quot;
+
+int
+main(int argc, char* argv[])
+{
+  // At this stage the system clock should have already been configured
+  // at high speed.
+
+  // Infinite loop
+  while (1)
+    {
+       // Add your code here.
+
+    }
+}
+
+#pragma GCC diagnostic pop
+
+// ----------------------------------------------------------------------------
+</code></pre><h2 id="first-stm32-project---hello-world">FIRST STM32 Project - &quot;Hello World&quot;</h2>
+<p>In Arduino IDE, to compile the above codes, click <strong>Sketch-&gt;Verify/Compile</strong>; to upload the code onto Arduino board afterwards, click <strong>Sketch-&gt;Upload</strong>.</p>
 <p><img src="Eclipse_07_Built_Failure.jpg" alt="Eclipse Built Failure"></p>
 <p><img src="Eclipse_08_Successfully_Built.jpg" alt="Eclipse Successfully Built"></p>
 <p><img src="Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg" alt="--specs=nosys.specs"></p>
@@ -387,7 +441,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"previous":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","mtime":"2018-05-14T20:47:06.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-14T20:47:23.135Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"previous":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","mtime":"2018-05-15T01:03:43.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T01:05:50.149Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
