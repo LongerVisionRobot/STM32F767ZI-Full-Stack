@@ -20,7 +20,6 @@ The right-hand sidebar on [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) 
 According to our summation, five things are to be installed:
 * [Eclipse Plug-in](https://gnu-mcu-eclipse.github.io/plugins/download/)
 * [ARM toolchain](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/)
-* [QEMU Plugin](https://github.com/gnu-mcu-eclipse/qemu/install)
 * [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
 * [ST-Link](https://github.com/texane/stlink)
 
