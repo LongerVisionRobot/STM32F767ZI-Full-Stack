@@ -309,8 +309,8 @@
                                 
                                 <h1 id="22-first-stm32-project---hello-world">2.2 FIRST STM32 Project - &quot;Hello World&quot;</h1>
 <p>As any other programming languages, our first STM32 Project is also &quot;Hello World&quot;, without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.</p>
-<h2 id="create-an-project-under-eclipse">Create an Project Under Eclipse</h2>
-<h3 id="step-1-steps-to-create-an-project">Step 1: Steps To Create an Project</h3>
+<h2 id="221-create-a-project-under-eclipse">2.2.1 Create a Project Under Eclipse</h2>
+<h3 id="steps-to-build-our-first-empty-project">Steps to Build Our First Empty Project</h3>
 <h4 id="a-create-an-empty-project">A. Create an Empty Project</h4>
 <p><strong>File</strong>-&gt;<strong>New</strong>-&gt;<strong>C/C++ Project</strong>, then click on <strong>C++ Managed Build</strong>:</p>
 <p><img src="Eclipse_01_New_Project.jpg" alt="Eclipse A New Project"></p>
@@ -355,7 +355,8 @@ arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-
 </ul>
 <p><img src="Eclipse_06_GNU_ARM_Cross_Toolchain.jpg" alt="Eclipse GNU ARM Cross Toolchain"></p>
 <p>Finally, click <strong>Finish</strong>.</p>
-<h4 id="g">G.</h4>
+<h4 id="g-build-the-empty-project">G. Build the Empty Project</h4>
+<p>Now, let&apos;s have a look at the empty project&apos;s code:</p>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &quot;diag/Trace.h&quot;
@@ -397,11 +398,23 @@ main(int argc, char* argv[])
 #pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
-</code></pre><h2 id="first-stm32-project---hello-world">FIRST STM32 Project - &quot;Hello World&quot;</h2>
-<p>In Arduino IDE, to compile the above codes, click <strong>Sketch-&gt;Verify/Compile</strong>; to upload the code onto Arduino board afterwards, click <strong>Sketch-&gt;Upload</strong>.</p>
+</code></pre><p>Then, we <strong>Build Project</strong>,</p>
+<p><img src="Eclipse_07_Built_Empty_Project.jpg" alt="Eclipse Built Empty Project"></p>
+<h2 id="222-print-out-hello-world">2.2.2 Print Out &quot;Hello World&quot;</h2>
+<h3 id="steps-to-build-hello-world">Steps to Build &quot;Hello World&quot;</h3>
+<h4 id="a-code-modification">A. Code Modification</h4>
+<p>In file <strong>main.cpp</strong>, add one line <strong>printf(&quot;Hello World!\n&quot;);</strong> under <strong>Add your code here.</strong> as:</p>
+<pre><code>// Add your code here.
+printf(&quot;Hello World!\n&quot;);
+</code></pre><h4 id="b-build-project---failure">B. Build Project - Failure</h4>
 <p><img src="Eclipse_07_Built_Failure.jpg" alt="Eclipse Built Failure"></p>
-<p><img src="Eclipse_08_Successfully_Built.jpg" alt="Eclipse Successfully Built"></p>
+<p>Why? In the next step, we are going to solve the problem.</p>
+<h4 id="c---specsnosysspecs">C. --specs=nosys.specs</h4>
+<p>To build the project successfully, we need to set <strong>--specs=nosys.specs</strong>. But, how to?
+<strong>HelloWorld</strong>-&gt;<strong>Properties</strong>-&gt;<strong>C/C++ Build</strong>-&gt;<strong>Settings</strong>-&gt;</p>
 <p><img src="Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg" alt="--specs=nosys.specs"></p>
+<h4 id="d-build-project-again---successful">D. Build Project Again - Successful</h4>
+<p><img src="Eclipse_08_Successfully_Built.jpg" alt="Eclipse Successfully Built"></p>
 
                                 
                                 </section>
@@ -441,7 +454,7 @@ main(int argc, char* argv[])
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"previous":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","mtime":"2018-05-15T01:03:43.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T01:05:50.149Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"previous":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","mtime":"2018-05-15T01:59:47.446Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T02:01:33.138Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

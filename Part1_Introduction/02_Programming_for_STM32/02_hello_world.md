@@ -3,9 +3,9 @@
 As any other programming languages, our first STM32 Project is also "Hello World", without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.
 
 
-## Create an Project Under Eclipse
+## 2.2.1 Create a Project Under Eclipse
 
-### Step 1: Steps To Create an Project
+### Steps to Build Our First Empty Project
 
 #### A. Create an Empty Project
 
@@ -75,7 +75,10 @@ arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-
 Finally, click **Finish**.
 
 
-#### G. 
+#### G. Build the Empty Project
+
+Now, let's have a look at the empty project's code:
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -120,18 +123,45 @@ main(int argc, char* argv[])
 // ----------------------------------------------------------------------------
 ```
 
+Then, we **Build Project**,
 
-## FIRST STM32 Project - "Hello World"
+![Eclipse Built Empty Project](Eclipse_07_Built_Empty_Project.jpg)
 
-In Arduino IDE, to compile the above codes, click **Sketch->Verify/Compile**; to upload the code onto Arduino board afterwards, click **Sketch->Upload**.
 
+
+
+## 2.2.2 Print Out "Hello World"
+
+### Steps to Build "Hello World"
+
+
+#### A. Code Modification
+
+In file **main.cpp**, add one line **printf("Hello World!\n");** under **Add your code here.** as:
+
+```
+// Add your code here.
+printf("Hello World!\n");
+```
+
+
+#### B. Build Project - Failure
 
 ![Eclipse Built Failure](Eclipse_07_Built_Failure.jpg)
 
+Why? In the next step, we are going to solve the problem.
 
-![Eclipse Successfully Built](Eclipse_08_Successfully_Built.jpg)
+
+#### C. --specs=nosys.specs
+
+To build the project successfully, we need to set **--specs=nosys.specs**. But, how to?
+**HelloWorld**->**Properties**->**C/C++ Build**->**Settings**->
 
 
 ![--specs=nosys.specs](Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg)
 
+
+#### D. Build Project Again - Successful
+
+![Eclipse Successfully Built](Eclipse_08_Successfully_Built.jpg)
 
