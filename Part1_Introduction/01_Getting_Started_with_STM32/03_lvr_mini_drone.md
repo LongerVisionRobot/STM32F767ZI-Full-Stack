@@ -9,11 +9,10 @@ The proprietary mini drone board designed by [Longer Vision Robot](http://www.lo
 
 ![LVR Mini Drone](./lvr_mini_drone.jpg)
 
-On the drone board, two very important chips are adopted:
+On the drone board, one very important chip is integrated:
 
 Item | No. of Pieces | Model | Features   
 ------- | ------- | -------- | -------------
-Communication | <center>1</center> | <center>nRF24L01</center> | 2.4G Hz RF
 IMU | <center>1</center> | <center>MPU 6050</center> | 6 Degrees, gyro + accelerator
 
 
@@ -31,10 +30,9 @@ We can power on the remote controller with the provided battery and have a look 
 
 ![LVR Mini Drone Controller - Front View When Powered On](./lvr_mini_drone_controller_front_poweron.jpg)
 
-On the remote controller, two very important chips are adopted:
+On the remote controller, two very important parts are integrated:
 
 Item | No. of Pieces | Model | Features   
 ------- | ------- | -------- | -------------
-Communication | <center>1</center> | <center>nRF24L01</center> | 2.4G Hz RF
 Monitor | <center>1</center> | <center></center> | 
 Joystick | <center>2</center> | <center></center> | 

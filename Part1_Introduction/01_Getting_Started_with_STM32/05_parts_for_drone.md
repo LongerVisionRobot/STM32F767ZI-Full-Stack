@@ -5,7 +5,7 @@ Students who take our mini drone course on-site will be given a **FREE** full se
 Item | No. of Pieces | Model | Features   
 --------- | ------- | -------- | -------------
 FC Power | <center>2</center> | <center>36W01</center> | 380mAh, 3.7V
-Radio  | <center>2</center> | | 
+Communication | <center>2</center> | <center>nRF24L01</center> | 2.4G Hz RF 
 Hollow Up DC Motor | <center>4</center> | <center>720</center> | 3.7V, 7*20 mm
 Rotor Wing | <center>4</center> | | 
 Rotor Wing Protector | <center>4</center> | | 
