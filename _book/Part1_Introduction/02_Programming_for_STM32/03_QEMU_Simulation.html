@@ -342,8 +342,26 @@
 <li><strong>Way 2</strong>: Test on a real <strong>STM32</strong> development board
 In this section, we are going to talk about how to run/test/debug the program in the popular simulator <a href="https://www.qemu.org/" target="_blank"><strong>QEMU</strong></a>.</li>
 </ul>
-<p><a href="https://gnu-mcu-eclipse.github.io/qemu/install/" target="_blank">QEMU</a></p>
-
+<h2 id="231-qemu-installation">2.3.1 QEMU Installation</h2>
+<h3 id="ways-to-install-qemu">Ways to Install QEMU:</h3>
+<h4 id="option-1-official-installation">Option 1: Official Installation</h4>
+<p>You can directly download QEMU&apos;s <strong>NEWEST</strong> release from its official website <a href="https://www.qemu.org" target="_blank">https://www.qemu.org</a>.</p>
+<h4 id="option-2-ubuntu-repository">Option 2: Ubuntu Repository</h4>
+<p>One command will do:</p>
+<pre><code>$ sudo apt install qemu
+</code></pre><h4 id="option-3-gnu-mcu-eclipse-qemu">Option 3: GNU MCU Eclipse QEMU</h4>
+<p>Since in our course, we are using <a href="https://gnu-mcu-eclipse.github.io/" target="_blank">GNU MCU Eclipse Plugin</a>, we can also use <a href="https://gnu-mcu-eclipse.github.io/qemu/install/" target="_blank">its own QEMU simulator</a>, from whree we should be able to find its <a href="https://github.com/gnu-mcu-eclipse/qemu/releases" target="_blank">releases on Github</a>. However, its <strong>NEWEST</strong> release is <strong>v2.8.0-20170301</strong>, which is quite <strong>OLD</strong>.</p>
+<h4 id="option-4-build-from-source-recommended">Option 4: Build from Source (Recommended)</h4>
+<p>This option is adopted in our case. Just strictly follow <a href="https://www.qemu.org/download/#source" target="_blank">https://www.qemu.org/download/#source</a>:</p>
+<pre><code>git clone git://git.qemu.org/qemu.git
+cd qemu
+git submodule init
+git submodule update --recursive
+mkdir build
+cd build
+../configure
+make -j4
+</code></pre>
                                 
                                 </section>
                             
@@ -386,7 +404,7 @@ In this section, we are going to talk about how to run/test/debug the program in
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 QEMU Simulation","level":"2.3.3","depth":2,"next":{"title":"2.4 Test On STM32F767ZI","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","articles":[]},"previous":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","mtime":"2018-05-15T04:00:46.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T18:25:26.327Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 QEMU Simulation","level":"2.3.3","depth":2,"next":{"title":"2.4 Test On STM32F767ZI","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","articles":[]},"previous":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","mtime":"2018-05-15T19:06:56.515Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:07:03.512Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
