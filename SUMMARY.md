@@ -15,3 +15,4 @@
     * [2.1 Prepare Free IDEs for Developing STM32](Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md)
     * [2.2 FIRST STM32 Project - Hello World](Part1_Introduction/02_Programming_for_STM32/02_hello_world.md)
     * [2.3 QEMU Simulation](Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md)
+    * [2.4 Test On STM32F767ZI](Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md)
