@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.2 FIRST STM32 Project - Hello World · GitBook</title>
+        <title>2.3 FIRST STM32 Project - Hello World · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="03_QEMU_Simulation.html" />
+    <link rel="next" href="04_QEMU_Simulation.html" />
     
     
-    <link rel="prev" href="01_Prepare_Free_IDEs_for_Developing_STM32.html" />
+    <link rel="prev" href="02_Prepare_Free_IDEs_for_Developing_STM32.html" />
     
 
     </head>
@@ -233,12 +233,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+        <li class="chapter " data-level="2.3.1" data-path="01_STM32CubeMX_Installation.html">
             
-                <a href="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+                <a href="01_STM32CubeMX_Installation.html">
             
                     
-                    2.1 Prepare Free IDEs for Developing STM32
+                    2.1 STM32CubeMX Installation
             
                 </a>
             
@@ -246,12 +246,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3.2" data-path="02_hello_world.html">
+        <li class="chapter " data-level="2.3.2" data-path="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
-                <a href="02_hello_world.html">
+                <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
                     
-                    2.2 FIRST STM32 Project - Hello World
+                    2.2 Prepare Free IDEs for Developing STM32
             
                 </a>
             
@@ -259,12 +259,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="03_QEMU_Simulation.html">
+        <li class="chapter active" data-level="2.3.3" data-path="03_hello_world.html">
             
-                <a href="03_QEMU_Simulation.html">
+                <a href="03_hello_world.html">
             
                     
-                    2.3 QEMU Simulation
+                    2.3 FIRST STM32 Project - Hello World
             
                 </a>
             
@@ -272,12 +272,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.4" data-path="04_Test_On_STM32F767ZI.html">
+        <li class="chapter " data-level="2.3.4" data-path="04_QEMU_Simulation.html">
             
-                <a href="04_Test_On_STM32F767ZI.html">
+                <a href="04_QEMU_Simulation.html">
             
                     
-                    2.4 Test On STM32F767ZI
+                    2.4 QEMU Simulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="05_Test_On_STM32F767ZI.html">
+            
+                <a href="05_Test_On_STM32F767ZI.html">
+            
+                    
+                    2.5 Test On STM32F767ZI
             
                 </a>
             
@@ -320,7 +333,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.2 FIRST STM32 Project - Hello World</a>
+        <a href="../.." >2.3 FIRST STM32 Project - Hello World</a>
     </h1>
 </div>
 
@@ -335,9 +348,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="22-first-stm32-project---hello-world">2.2 FIRST STM32 Project - &quot;Hello World&quot;</h1>
+                                <h1 id="23-first-stm32-project---hello-world">2.3 FIRST STM32 Project - &quot;Hello World&quot;</h1>
 <p>As any other programming languages, our first STM32 Project is also &quot;Hello World&quot;, without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.</p>
-<h2 id="221-create-a-project-under-eclipse">2.2.1 Create a Project Under Eclipse</h2>
+<h2 id="231-create-a-project-under-eclipse">2.3.1 Create a Project Under Eclipse</h2>
 <h3 id="steps-to-build-our-first-empty-project">Steps to Build Our First Empty Project</h3>
 <h4 id="a-create-an-empty-project">A. Create an Empty Project</h4>
 <p><strong>File</strong>-&gt;<strong>New</strong>-&gt;<strong>C/C++ Project</strong>, then click on <strong>C++ Managed Build</strong>:</p>
@@ -428,7 +441,7 @@ main(int argc, char* argv[])
 // ----------------------------------------------------------------------------
 </code></pre><p>Then, we <strong>Build Project</strong>,</p>
 <p><img src="Eclipse_07_Built_Empty_Project.jpg" alt="Eclipse Built Empty Project"></p>
-<h2 id="222-print-out-hello-world">2.2.2 Print Out &quot;Hello World&quot;</h2>
+<h2 id="232-print-out-hello-world">2.3.2 Print Out &quot;Hello World&quot;</h2>
 <h3 id="steps-to-build-hello-world">Steps to Build &quot;Hello World&quot;</h3>
 <h4 id="a-code-modification">A. Code Modification</h4>
 <p>In file <strong>main.cpp</strong>, add one line <strong>printf(&quot;Hello World!\n&quot;);</strong> under <strong>Add your code here.</strong> as:</p>
@@ -471,12 +484,12 @@ printf(&quot;Hello World!\n&quot;);
 
             
                 
-                <a href="01_Prepare_Free_IDEs_for_Developing_STM32.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 Prepare Free IDEs for Developing STM32">
+                <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 Prepare Free IDEs for Developing STM32">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="03_QEMU_Simulation.html" class="navigation navigation-next " aria-label="Next page: 2.3 QEMU Simulation">
+                <a href="04_QEMU_Simulation.html" class="navigation navigation-next " aria-label="Next page: 2.4 QEMU Simulation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -487,7 +500,7 @@ printf(&quot;Hello World!\n&quot;);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"next":{"title":"2.3 QEMU Simulation","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","articles":[]},"previous":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","mtime":"2018-05-15T02:28:00.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:07:03.512Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"next":{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"previous":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","mtime":"2018-05-15T19:40:20.345Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:42:12.219Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

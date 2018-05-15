@@ -1,6 +1,6 @@
-# 2.1 Prepare Free IDEs for Developing STM32
+# 2.2 Prepare Free IDEs for Developing STM32
 
-## 2.1.1 GNU MCU Eclipse
+## 2.2.1 GNU MCU Eclipse
 
 
 ### Step 1: Install Eclipse
@@ -39,14 +39,14 @@ Therefore, we have this Eclipse Plugin installed from within Eclipse MarketPlace
 
 It's clearly summarized in [https://gnu-mcu-eclipse.github.io/toolchain/arm/install/](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/) that there are 2 ways to carry out the installation for GNU MCU Eclipse ARM Embedded GCC: **The xPack install** and **Manual install**.
 
-**The manual install** is strongly recommended. You **ONLY** need to visit [GNU MCU Eclipse ARM Embedded GCC](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases), and download the corresponding file. [gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.1-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz) is downloaded and extracted under **/opt/GCCToolChains** in our case. Let's have a look at what files are under the ARM toolchain folder:
+**The manual install** is strongly recommended. You **ONLY** need to visit [GNU MCU Eclipse ARM Embedded GCC](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases), and download the corresponding file. [gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.2-1.1-20180401-0515-centos64.tgz](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.2-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.2-1.1-20180401-0515-centos64.tgz) is downloaded and extracted under **/opt/GCCToolChains** in our case. Let's have a look at what files are under the ARM toolchain folder:
 
 ```
-/opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7.2.1-1.1-20180401-0515/bin$ ls
+/opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7.2.2-1.1-20180401-0515/bin$ ls
 arm-none-eabi-addr2line  arm-none-eabi-elfedit    arm-none-eabi-gcc-ranlib  arm-none-eabi-gprof    arm-none-eabi-ranlib
 arm-none-eabi-ar         arm-none-eabi-g++        arm-none-eabi-gcov        arm-none-eabi-ld       arm-none-eabi-readelf
 arm-none-eabi-as         arm-none-eabi-gcc        arm-none-eabi-gcov-dump   arm-none-eabi-ld.bfd   arm-none-eabi-size
-arm-none-eabi-c++        arm-none-eabi-gcc-7.2.1  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
+arm-none-eabi-c++        arm-none-eabi-gcc-7.2.2  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
 arm-none-eabi-c++filt    arm-none-eabi-gcc-ar     arm-none-eabi-gdb         arm-none-eabi-objcopy  arm-none-eabi-strip
 arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-none-eabi-objdump
 ```
@@ -84,9 +84,9 @@ Finally, we enable **save automatically before build** and **UTF-8** encoding wi
 ![Configuration in Workspace Preference](workspace_preference.jpg)
 
 
-## 2.1.2 SW4STM32 (System Workbench for STM32)
+## 2.2.2 SW4STM32 (System Workbench for STM32)
 
 To install the free IDE [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html), [ST's official website](http://www.st.com/en/development-tools/sw4stm32.html) is redirected to [OpenSTM32](http://www.openstm32.org/). Users must first register on [OpenSTM32](http://www.openstm32.org/), and then strictly follow [Installing System Workbench for STM32](http://www.openstm32.org/Installing%2BSystem%2BWorkbench%2Bfor%2BSTM32).
 
-Since we are going to use [2.1.1 GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) throughout our course, we are **NOT** going to elaborate how to carry out the development for STM32 using [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html).
+Since we are going to use [2.2.1 GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) throughout our course, we are **NOT** going to elaborate how to carry out the development for STM32 using [System Workbench for STM32](http://www.st.com/en/development-tools/sw4stm32.html).
 

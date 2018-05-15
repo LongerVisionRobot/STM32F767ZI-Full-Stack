@@ -1,4 +1,4 @@
-# 2.3 QEMU Simulation (Optional)
+# 2.4 QEMU Simulation (Optional)
 
 In the [previous section](../02_Programming_for_STM32/02_hello_world.md), we have **NOT** run/test/debug the program yet. How to do that? Normally, there are 2 ways to test your code before flashing your code down to a chip. 
 * **Way 1**: Test in a simulator, which simulates the **STM32** chip
@@ -6,9 +6,9 @@ In the [previous section](../02_Programming_for_STM32/02_hello_world.md), we hav
 In this section, we are going to talk about how to run/test/debug the program in the popular simulator [**QEMU**](https://www.qemu.org/).
 
 
-## 2.3.1 QEMU Installation
+## 2.4.1 QEMU Installation
 
-### Ways to Install QEMU:
+### Ways to Install QEMU
 
 #### Option 1: Official Installation
 
@@ -40,5 +40,7 @@ cd build
 make -j4
 ```
 
+
+### Test QEMU
 
 

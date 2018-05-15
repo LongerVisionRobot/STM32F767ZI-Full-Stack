@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 Prepare Free IDEs for Developing STM32 · GitBook</title>
+        <title>2.2 Prepare Free IDEs for Developing STM32 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02_hello_world.html" />
+    <link rel="next" href="03_hello_world.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="01_STM32CubeMX_Installation.html" />
     
 
     </head>
@@ -233,12 +233,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.3.1" data-path="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+        <li class="chapter " data-level="2.3.1" data-path="01_STM32CubeMX_Installation.html">
             
-                <a href="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+                <a href="01_STM32CubeMX_Installation.html">
             
                     
-                    2.1 Prepare Free IDEs for Developing STM32
+                    2.1 STM32CubeMX Installation
             
                 </a>
             
@@ -246,12 +246,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="02_hello_world.html">
+        <li class="chapter active" data-level="2.3.2" data-path="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
-                <a href="02_hello_world.html">
+                <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
                     
-                    2.2 FIRST STM32 Project - Hello World
+                    2.2 Prepare Free IDEs for Developing STM32
             
                 </a>
             
@@ -259,12 +259,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="03_QEMU_Simulation.html">
+        <li class="chapter " data-level="2.3.3" data-path="03_hello_world.html">
             
-                <a href="03_QEMU_Simulation.html">
+                <a href="03_hello_world.html">
             
                     
-                    2.3 QEMU Simulation
+                    2.3 FIRST STM32 Project - Hello World
             
                 </a>
             
@@ -272,12 +272,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.4" data-path="04_Test_On_STM32F767ZI.html">
+        <li class="chapter " data-level="2.3.4" data-path="04_QEMU_Simulation.html">
             
-                <a href="04_Test_On_STM32F767ZI.html">
+                <a href="04_QEMU_Simulation.html">
             
                     
-                    2.4 Test On STM32F767ZI
+                    2.4 QEMU Simulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="05_Test_On_STM32F767ZI.html">
+            
+                <a href="05_Test_On_STM32F767ZI.html">
+            
+                    
+                    2.5 Test On STM32F767ZI
             
                 </a>
             
@@ -320,7 +333,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.1 Prepare Free IDEs for Developing STM32</a>
+        <a href="../.." >2.2 Prepare Free IDEs for Developing STM32</a>
     </h1>
 </div>
 
@@ -335,8 +348,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="21-prepare-free-ides-for-developing-stm32">2.1 Prepare Free IDEs for Developing STM32</h1>
-<h2 id="211-gnu-mcu-eclipse">2.1.1 GNU MCU Eclipse</h2>
+                                <h1 id="22-prepare-free-ides-for-developing-stm32">2.2 Prepare Free IDEs for Developing STM32</h1>
+<h2 id="221-gnu-mcu-eclipse">2.2.1 GNU MCU Eclipse</h2>
 <h3 id="step-1-install-eclipse">Step 1: Install Eclipse</h3>
 <p>It&apos;s supposed that students have already installed <a href="https://www.eclipse.org" target="_blank">Eclipse</a>. For the time being, the most recent Eclipse release is <a href="https://www.eclipse.org/downloads/packages/release/Oxygen/3A" target="_blank">Eclipse Oxygen 3A</a>, and what we are using is <a href="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz" target="_blank">Eclipse IDE for C/C++ Developers - Linux 64-bit</a>.</p>
 <h3 id="step-2-install-gnu-mcu-plug-ins-for-eclipse">Step 2: Install GNU MCU Plug-ins for Eclipse</h3>
@@ -360,12 +373,12 @@
 <p><img src="GNU_MCU_Eclipse_MarketPlace.jpg" alt="GNU MCU Eclipse Marketplace"></p>
 <h4 id="b-install-arm-toolchain">B. Install ARM Toolchain</h4>
 <p>It&apos;s clearly summarized in <a href="https://gnu-mcu-eclipse.github.io/toolchain/arm/install/" target="_blank">https://gnu-mcu-eclipse.github.io/toolchain/arm/install/</a> that there are 2 ways to carry out the installation for GNU MCU Eclipse ARM Embedded GCC: <strong>The xPack install</strong> and <strong>Manual install</strong>.</p>
-<p><strong>The manual install</strong> is strongly recommended. You <strong>ONLY</strong> need to visit <a href="https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases" target="_blank">GNU MCU Eclipse ARM Embedded GCC</a>, and download the corresponding file. <a href="https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.1-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz" target="_blank">gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.1-1.1-20180401-0515-centos64.tgz</a> is downloaded and extracted under <strong>/opt/GCCToolChains</strong> in our case. Let&apos;s have a look at what files are under the ARM toolchain folder:</p>
-<pre><code>/opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7.2.1-1.1-20180401-0515/bin$ ls
+<p><strong>The manual install</strong> is strongly recommended. You <strong>ONLY</strong> need to visit <a href="https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases" target="_blank">GNU MCU Eclipse ARM Embedded GCC</a>, and download the corresponding file. <a href="https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/download/v7.2.2-1.1/gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.2-1.1-20180401-0515-centos64.tgz" target="_blank">gnu-mcu-eclipse-arm-none-eabi-gcc-7.2.2-1.1-20180401-0515-centos64.tgz</a> is downloaded and extracted under <strong>/opt/GCCToolChains</strong> in our case. Let&apos;s have a look at what files are under the ARM toolchain folder:</p>
+<pre><code>/opt/GCCToolChains/gnu-mcu-eclipse/arm-none-eabi-gcc/7.2.2-1.1-20180401-0515/bin$ ls
 arm-none-eabi-addr2line  arm-none-eabi-elfedit    arm-none-eabi-gcc-ranlib  arm-none-eabi-gprof    arm-none-eabi-ranlib
 arm-none-eabi-ar         arm-none-eabi-g++        arm-none-eabi-gcov        arm-none-eabi-ld       arm-none-eabi-readelf
 arm-none-eabi-as         arm-none-eabi-gcc        arm-none-eabi-gcov-dump   arm-none-eabi-ld.bfd   arm-none-eabi-size
-arm-none-eabi-c++        arm-none-eabi-gcc-7.2.1  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
+arm-none-eabi-c++        arm-none-eabi-gcc-7.2.2  arm-none-eabi-gcov-tool   arm-none-eabi-nm       arm-none-eabi-strings
 arm-none-eabi-c++filt    arm-none-eabi-gcc-ar     arm-none-eabi-gdb         arm-none-eabi-objcopy  arm-none-eabi-strip
 arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-none-eabi-objdump
 </code></pre><h4 id="c-install-j-link">C. Install J-Link</h4>
@@ -389,9 +402,9 @@ $ sudo checkinstall --fstrans=no
 <h3 id="step-3-workspace-preference">Step 3: Workspace Preference</h3>
 <p>Finally, we enable <strong>save automatically before build</strong> and <strong>UTF-8</strong> encoding within <strong>Workspace Preference</strong>.</p>
 <p><img src="workspace_preference.jpg" alt="Configuration in Workspace Preference"></p>
-<h2 id="212-sw4stm32-system-workbench-for-stm32">2.1.2 SW4STM32 (System Workbench for STM32)</h2>
+<h2 id="222-sw4stm32-system-workbench-for-stm32">2.2.2 SW4STM32 (System Workbench for STM32)</h2>
 <p>To install the free IDE <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">System Workbench for STM32</a>, <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">ST&apos;s official website</a> is redirected to <a href="http://www.openstm32.org/" target="_blank">OpenSTM32</a>. Users must first register on <a href="http://www.openstm32.org/" target="_blank">OpenSTM32</a>, and then strictly follow <a href="http://www.openstm32.org/Installing%2BSystem%2BWorkbench%2Bfor%2BSTM32" target="_blank">Installing System Workbench for STM32</a>.</p>
-<p>Since we are going to use <a href="https://gnu-mcu-eclipse.github.io/" target="_blank">2.1.1 GNU MCU Eclipse</a> throughout our course, we are <strong>NOT</strong> going to elaborate how to carry out the development for STM32 using <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">System Workbench for STM32</a>.</p>
+<p>Since we are going to use <a href="https://gnu-mcu-eclipse.github.io/" target="_blank">2.2.1 GNU MCU Eclipse</a> throughout our course, we are <strong>NOT</strong> going to elaborate how to carry out the development for STM32 using <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">System Workbench for STM32</a>.</p>
 
                                 
                                 </section>
@@ -419,12 +432,12 @@ $ sudo checkinstall --fstrans=no
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 2. Programming for STM32">
+                <a href="01_STM32CubeMX_Installation.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 STM32CubeMX Installation">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="02_hello_world.html" class="navigation navigation-next " aria-label="Next page: 2.2 FIRST STM32 Project - Hello World">
+                <a href="03_hello_world.html" class="navigation navigation-next " aria-label="Next page: 2.3 FIRST STM32 Project - Hello World">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -435,7 +448,7 @@ $ sudo checkinstall --fstrans=no
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"next":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","articles":[]},"previous":{"title":"Chapter 2. Programming for STM32","level":"2.3","depth":1,"path":"Part1_Introduction/02_Programming_for_STM32/README.md","ref":"Part1_Introduction/02_Programming_for_STM32/README.md","articles":[{"title":"2.1 Prepare Free IDEs for Developing STM32","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","articles":[]},{"title":"2.3 QEMU Simulation","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","articles":[]},{"title":"2.4 Test On STM32F767ZI","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/01_Prepare_Free_IDEs_for_Developing_STM32.md","mtime":"2018-05-15T03:57:34.792Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:07:03.512Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"next":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},"previous":{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","mtime":"2018-05-15T19:40:10.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:42:12.219Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,9 +1,9 @@
-# 2.2 FIRST STM32 Project - "Hello World"
+# 2.3 FIRST STM32 Project - "Hello World"
 
 As any other programming languages, our first STM32 Project is also "Hello World", without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.
 
 
-## 2.2.1 Create a Project Under Eclipse
+## 2.3.1 Create a Project Under Eclipse
 
 ### Steps to Build Our First Empty Project
 
@@ -130,7 +130,7 @@ Then, we **Build Project**,
 
 
 
-## 2.2.2 Print Out "Hello World"
+## 2.3.2 Print Out "Hello World"
 
 ### Steps to Build "Hello World"
 

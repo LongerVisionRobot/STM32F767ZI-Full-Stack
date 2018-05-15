@@ -1,3 +1,0 @@
-# 2.4 Test On STM32F767ZI
-
-

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.3 QEMU Simulation · GitBook</title>
+        <title>2.1 STM32CubeMX Installation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="04_Test_On_STM32F767ZI.html" />
+    <link rel="next" href="02_Prepare_Free_IDEs_for_Developing_STM32.html" />
     
     
-    <link rel="prev" href="02_hello_world.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -233,12 +233,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+        <li class="chapter active" data-level="2.3.1" data-path="01_STM32CubeMX_Installation.html">
             
-                <a href="01_Prepare_Free_IDEs_for_Developing_STM32.html">
+                <a href="01_STM32CubeMX_Installation.html">
             
                     
-                    2.1 Prepare Free IDEs for Developing STM32
+                    2.1 STM32CubeMX Installation
             
                 </a>
             
@@ -246,12 +246,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="02_hello_world.html">
+        <li class="chapter " data-level="2.3.2" data-path="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
-                <a href="02_hello_world.html">
+                <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html">
             
                     
-                    2.2 FIRST STM32 Project - Hello World
+                    2.2 Prepare Free IDEs for Developing STM32
             
                 </a>
             
@@ -259,12 +259,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3.3" data-path="03_QEMU_Simulation.html">
+        <li class="chapter " data-level="2.3.3" data-path="03_hello_world.html">
             
-                <a href="03_QEMU_Simulation.html">
+                <a href="03_hello_world.html">
             
                     
-                    2.3 QEMU Simulation
+                    2.3 FIRST STM32 Project - Hello World
             
                 </a>
             
@@ -272,12 +272,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.4" data-path="04_Test_On_STM32F767ZI.html">
+        <li class="chapter " data-level="2.3.4" data-path="04_QEMU_Simulation.html">
             
-                <a href="04_Test_On_STM32F767ZI.html">
+                <a href="04_QEMU_Simulation.html">
             
                     
-                    2.4 Test On STM32F767ZI
+                    2.4 QEMU Simulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="05_Test_On_STM32F767ZI.html">
+            
+                <a href="05_Test_On_STM32F767ZI.html">
+            
+                    
+                    2.5 Test On STM32F767ZI
             
                 </a>
             
@@ -320,7 +333,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.3 QEMU Simulation</a>
+        <a href="../.." >2.1 STM32CubeMX Installation</a>
     </h1>
 </div>
 
@@ -335,33 +348,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="23-qemu-simulation-optional">2.3 QEMU Simulation (Optional)</h1>
-<p>In the <a href="02_hello_world.html">previous section</a>, we have <strong>NOT</strong> run/test/debug the program yet. How to do that? Normally, there are 2 ways to test your code before flashing your code down to a chip. </p>
-<ul>
-<li><strong>Way 1</strong>: Test in a simulator, which simulates the <strong>STM32</strong> chip</li>
-<li><strong>Way 2</strong>: Test on a real <strong>STM32</strong> development board
-In this section, we are going to talk about how to run/test/debug the program in the popular simulator <a href="https://www.qemu.org/" target="_blank"><strong>QEMU</strong></a>.</li>
-</ul>
-<h2 id="231-qemu-installation">2.3.1 QEMU Installation</h2>
-<h3 id="ways-to-install-qemu">Ways to Install QEMU:</h3>
-<h4 id="option-1-official-installation">Option 1: Official Installation</h4>
-<p>You can directly download QEMU&apos;s <strong>NEWEST</strong> release from its official website <a href="https://www.qemu.org" target="_blank">https://www.qemu.org</a>.</p>
-<h4 id="option-2-ubuntu-repository">Option 2: Ubuntu Repository</h4>
-<p>One command will do:</p>
-<pre><code>$ sudo apt install qemu
-</code></pre><h4 id="option-3-gnu-mcu-eclipse-qemu">Option 3: GNU MCU Eclipse QEMU</h4>
-<p>Since in our course, we are using <a href="https://gnu-mcu-eclipse.github.io/" target="_blank">GNU MCU Eclipse Plugin</a>, we can also use <a href="https://gnu-mcu-eclipse.github.io/qemu/install/" target="_blank">its own QEMU simulator</a>, from whree we should be able to find its <a href="https://github.com/gnu-mcu-eclipse/qemu/releases" target="_blank">releases on Github</a>. However, its <strong>NEWEST</strong> release is <strong>v2.8.0-20170301</strong>, which is quite <strong>OLD</strong>.</p>
-<h4 id="option-4-build-from-source-recommended">Option 4: Build from Source (Recommended)</h4>
-<p>This option is adopted in our case. Just strictly follow <a href="https://www.qemu.org/download/#source" target="_blank">https://www.qemu.org/download/#source</a>:</p>
-<pre><code>git clone git://git.qemu.org/qemu.git
-cd qemu
-git submodule init
-git submodule update --recursive
-mkdir build
-cd build
-../configure
-make -j4
-</code></pre>
+                                <h1 id="21-stm32cubemx-installation">2.1 STM32CubeMX Installation</h1>
+<h2 id="211">2.1.1</h2>
+
                                 
                                 </section>
                             
@@ -388,12 +377,12 @@ make -j4
 
             
                 
-                <a href="02_hello_world.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 FIRST STM32 Project - Hello World">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 2. Programming for STM32">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="04_Test_On_STM32F767ZI.html" class="navigation navigation-next " aria-label="Next page: 2.4 Test On STM32F767ZI">
+                <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html" class="navigation navigation-next " aria-label="Next page: 2.2 Prepare Free IDEs for Developing STM32">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -404,7 +393,7 @@ make -j4
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 QEMU Simulation","level":"2.3.3","depth":2,"next":{"title":"2.4 Test On STM32F767ZI","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_Test_On_STM32F767ZI.md","articles":[]},"previous":{"title":"2.2 FIRST STM32 Project - Hello World","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_hello_world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_QEMU_Simulation.md","mtime":"2018-05-15T19:06:56.515Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:07:03.512Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"next":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"previous":{"title":"Chapter 2. Programming for STM32","level":"2.3","depth":1,"path":"Part1_Introduction/02_Programming_for_STM32/README.md","ref":"Part1_Introduction/02_Programming_for_STM32/README.md","articles":[{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","articles":[]},{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},{"title":"2.5 Test On STM32F767ZI","level":"2.3.5","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","mtime":"2018-05-15T19:41:04.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:42:12.219Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
