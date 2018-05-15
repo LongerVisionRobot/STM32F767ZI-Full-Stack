@@ -17,7 +17,7 @@ The right-hand sidebar on [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) 
 
 ![GNU MCU Eclipse: What's To Be Installed](./GNU_MCU_Eclipse_2B_Installed.jpg)
 
-According to our summation, four things are to be installed:
+According to our summation, four things must be installed:
 * [Eclipse Plug-in](https://gnu-mcu-eclipse.github.io/plugins/download/)
 * [ARM toolchain](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/)
 * [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
