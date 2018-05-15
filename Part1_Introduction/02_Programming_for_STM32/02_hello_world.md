@@ -147,7 +147,7 @@ printf("Hello World!\n");
 
 #### B. Build Project - Failure
 
-![Eclipse Built Failure](Eclipse_07_Built_Failure.jpg)
+![Eclipse Built Failure](Eclipse_08_Built_Failure.jpg)
 
 Why? In the next step, we are going to solve the problem.
 
@@ -155,13 +155,16 @@ Why? In the next step, we are going to solve the problem.
 #### C. --specs=nosys.specs
 
 To build the project successfully, we need to set **--specs=nosys.specs**. But, how to?
-**HelloWorld**->**Properties**->**C/C++ Build**->**Settings**->
+**HelloWorld**->**Properties**->**C/C++ Build**->**Settings**->**Tool Settings**->**GNU ARM Cross C++ Linker**->**Miscellaneous**, and tick **Do not use syscalls(-specs=nosys.specs)**.
 
 
-![--specs=nosys.specs](Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg)
+![--specs=nosys.specs](Eclipse_09_Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg)
+
+
+Then, we **Apply and Close**.
 
 
 #### D. Build Project Again - Successful
 
-![Eclipse Successfully Built](Eclipse_08_Successfully_Built.jpg)
+![Eclipse Successfully Built](Eclipse_10_Successfully_Built.jpg)
 
