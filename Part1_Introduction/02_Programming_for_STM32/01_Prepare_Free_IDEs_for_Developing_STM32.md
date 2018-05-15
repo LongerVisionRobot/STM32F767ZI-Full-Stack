@@ -2,6 +2,7 @@
 
 ## 2.1.1 GNU MCU Eclipse
 
+
 ### Step 1: Install Eclipse
 
 It's supposed that students have already installed [Eclipse](https://www.eclipse.org). For the time being, the most recent Eclipse release is [Eclipse Oxygen 3A](https://www.eclipse.org/downloads/packages/release/Oxygen/3A), and what we are using is [Eclipse IDE for C/C++ Developers - Linux 64-bit](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz).
@@ -16,11 +17,13 @@ The right-hand sidebar on [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) 
 
 ![GNU MCU Eclipse: What's To Be Installed](./GNU_MCU_Eclipse_2B_Installed.jpg)
 
-According to our summation, four things are to be installed:
+According to our summation, five things are to be installed:
 * [Eclipse Plug-in](https://gnu-mcu-eclipse.github.io/plugins/download/)
 * [ARM toolchain](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/)
+* [QEMU Plugin](https://github.com/gnu-mcu-eclipse/qemu/install)
 * [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
 * [ST-Link](https://github.com/texane/stlink)
+
 
 #### A. Install Eclipse Plug-in
 
@@ -31,6 +34,7 @@ Currently, if you install the plugin from within Eclipse by providing the plugin
 Therefore, we have this Eclipse Plugin installed from within Eclipse MarketPlace as follows:
 
 ![GNU MCU Eclipse Marketplace](GNU_MCU_Eclipse_MarketPlace.jpg)
+
 
 #### B. Install ARM Toolchain
 
@@ -78,7 +82,7 @@ Four **exe** files are respectively installed as:
 
 Finally, we enable **save automatically before build** and **UTF-8** encoding within **Workspace Preference**.
 
-![image](workspace_preference.jpg)
+![Configuration in Workspace Preference](workspace_preference.jpg)
 
 
 ## 2.1.2 SW4STM32 (System Workbench for STM32)
