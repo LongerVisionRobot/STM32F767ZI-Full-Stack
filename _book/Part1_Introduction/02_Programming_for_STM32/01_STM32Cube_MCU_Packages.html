@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 STM32CubeMX Installation · GitBook</title>
+        <title>2.1 STM32CubeMX MCU Packages · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -233,12 +233,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.3.1" data-path="01_STM32CubeMX_Installation.html">
+        <li class="chapter active" data-level="2.3.1" data-path="01_STM32Cube_MCU_Packages.html">
             
-                <a href="01_STM32CubeMX_Installation.html">
+                <a href="01_STM32Cube_MCU_Packages.html">
             
                     
-                    2.1 STM32CubeMX Installation
+                    2.1 STM32CubeMX MCU Packages
             
                 </a>
             
@@ -333,7 +333,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.1 STM32CubeMX Installation</a>
+        <a href="../.." >2.1 STM32CubeMX MCU Packages</a>
     </h1>
 </div>
 
@@ -348,8 +348,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="21-stm32cubemx-installation">2.1 STM32CubeMX Installation</h1>
-<h2 id="211">2.1.1</h2>
+                                <h1 id="21-stm32cube-mcu-packages">2.1 STM32Cube MCU Packages</h1>
+<h2 id="211-stm32cubef7">2.1.1 STM32CubeF7</h2>
+<p>Since we are using a <strong>STM32F767ZI</strong> development board, the corresponding MCU packages are needed to be installed.</p>
+<p>According to ST&apos;s official website <a href="http://www.st.com/en/embedded-software/stm32cubef7.html" target="_blank">http://www.st.com/en/embedded-software/stm32cubef7.html</a>,</p>
+<blockquote>
+<p>STMCube&#x2122; is an STMicroelectronics original initiative to make developers&apos; lives easier by reducing development effort, time and cost. STM32Cube is the implementation of STMCube that covers the whole STM32 portfolio.</p>
+<p>STM32Cube includes STM32CubeMX, a graphical software configuration tool that allows the generation of C initialization code using graphical wizards.</p>
+<p>It also comprises the STM32CubeF7 MCU Package composed of the STM32Cube hardware abstraction layer (HAL) and the low-layer (LL) APIs, plus a consistent set of middleware components (RTOS, USB, FAT file system, Graphics and TCP/IP). All embedded software utilities are delivered with a full set of examples running on STMicroelectronics boards.</p>
+</blockquote>
+<p>On website <a href="http://www.st.com/en/embedded-software/stm32cubef7.html" target="_blank">http://www.st.com/en/embedded-software/stm32cubef7.html</a>, click on <strong>Get Software</strong> at the bottom, and <strong>Accept</strong> the <strong>License Agreement</strong>. A file named <strong>en.stm32cubef7.zip</strong> will be downloaded. Afterwards, we extract it somewhere. Then, we copy the entire folder <strong>STM32Cube_FW_F7_V1.11.0</strong> under folder <strong>/opt</strong> and briefly have a look what&apos;s under this folder: </p>
+<pre><code>/opt/STM32Cube_FW_F7_V1.11.0/Drivers$ ls
+BSP  CMSIS  STM32F7xx_HAL_Driver
+/opt/STM32Cube_FW_F7_V1.11.0/Drivers$ ls BSP
+Adafruit_Shield  STM32746G-Discovery  STM32F723E-Discovery  STM32F769I_EVAL
+Components       STM32756G_EVAL       STM32F769I-Discovery  STM32F7xx_Nucleo_144
+/opt/STM32Cube_FW_F7_V1.11.0/Drivers$ ls CMSIS/
+CMSIS_END_USER_LICENCE_AGREEMENT.pdf  Device         DSP_Lib  index.html  RTOS
+CMSIS_END_USER_LICENCE_AGREEMENT.rtf  Documentation  Include  Lib
+/opt/STM32Cube_FW_F7_V1.11.0/Drivers$ ls STM32F7xx_HAL_Driver/
+Inc                 Src                          STM32F745xx_User_Manual.chm  STM32F756xx_User_Manual.chm
+Release_Notes.html  STM32F733xx_User_Manual.chm  STM32F746xx_User_Manual.chm  STM32F779xx_User_Manual.chm
+</code></pre><p>In our case, we do one step more:</p>
+<pre><code>$ ln -s STM32Cube_FW_F7_V1.11.0/ STM32CubeSDK
+</code></pre><p>In the <a href="02_Prepare_Free_IDEs_for_Developing_STM32.html">next section</a>, we&apos;ll configure STM32 MCU packages in Eclipse IDE.</p>
+<h2 id="212-stm32cubemx-optional">2.1.2 STM32CubeMX (Optional)</h2>
+<p>According to ST&apos;s official website <a href="http://www.st.com/en/development-tools/stm32cubemx.html" target="_blank">http://www.st.com/en/development-tools/stm32cubemx.html</a>,</p>
+<blockquote>
+<p>STM32CubeMX is part of STMicroelectronics STMCube&#x2122; original initiative to make developers&#x2019; lives easier by reducing development effort, time and cost. STM32Cube covers the whole STM32 portfolio.</p>
+<p>STM32Cube includes STM32CubeMX, a graphical software configuration tool that allows the generation of C initialization code using graphical wizards.</p>
+<p>It also embeds comprehensive STM32Cube MCU Packages, delivered per STM32 microcontroller Series (such as STM32CubeF4 for STM32F4 Series). These packages include the STM32Cube HAL (an STM32 abstraction layer embedded software ensuring maximized portability across the STM32 portfolio), the STM32Cube LL (low-layer APIs, a fast, light-weight, expert-oriented layer), plus a consistent set of middleware components such as RTOS, USB, TCP/IP and graphics. All the embedded software utilities are delivered with a full set of examples.</p>
+</blockquote>
+<p>The reason why <strong>STM32CubeMX</strong> is <strong>optional</strong> for installation is just because <strong>STM32CubeMX</strong> contains comprehensive <strong>STM32Cube MCU Packages</strong>.</p>
+<p>On website <a href="http://www.st.com/en/development-tools/stm32cubemx.html" target="_blank">http://www.st.com/en/development-tools/stm32cubemx.html</a>, click on <strong>Get Software</strong> at the bottom, and <strong>Accept</strong> the <strong>License Agreement</strong>. A file named <strong>en.stm32cubemx.zip</strong> will be downloaded. Afterwards, we extract it somewhere. Then, we install it. In our case:</p>
+<pre><code>$ ./SetupSTM32CubeMX-4.25.1.linux
+</code></pre><p><strong>STM32CubeMX</strong> will be defaultly installed under <strong>/opt/STM32CubeMX</strong>. We can run <strong>STM32CubeMX</strong> by typing:</p>
+<pre><code>$ ./STM32CubeMX &amp;
+</code></pre><p>Afterwards, let&apos;s briefly have a look at <strong>STM32CubeMX About</strong>.</p>
+<p><img src="STM32CubeMX_About.jpg" alt="STM32CubeMX About"></p>
 
                                 
                                 </section>
@@ -393,7 +429,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"next":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"previous":{"title":"Chapter 2. Programming for STM32","level":"2.3","depth":1,"path":"Part1_Introduction/02_Programming_for_STM32/README.md","ref":"Part1_Introduction/02_Programming_for_STM32/README.md","articles":[{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","articles":[]},{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},{"title":"2.5 Test On STM32F767ZI","level":"2.3.5","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","mtime":"2018-05-15T19:41:04.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:42:12.219Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1 STM32CubeMX MCU Packages","level":"2.3.1","depth":2,"next":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"previous":{"title":"Chapter 2. Programming for STM32","level":"2.3","depth":1,"path":"Part1_Introduction/02_Programming_for_STM32/README.md","ref":"Part1_Introduction/02_Programming_for_STM32/README.md","articles":[{"title":"2.1 STM32CubeMX MCU Packages","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md","articles":[]},{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},{"title":"2.5 Test On STM32F767ZI","level":"2.3.5","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","ref":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md","mtime":"2018-05-15T21:07:10.241Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T21:59:31.712Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

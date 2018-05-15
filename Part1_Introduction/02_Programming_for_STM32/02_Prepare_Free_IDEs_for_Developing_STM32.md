@@ -17,7 +17,7 @@ The right-hand sidebar on [GNU MCU Eclipse](https://gnu-mcu-eclipse.github.io/) 
 
 ![GNU MCU Eclipse: What's To Be Installed](./GNU_MCU_Eclipse_2B_Installed.jpg)
 
-According to our summation, five things are to be installed:
+According to our summation, four things are to be installed:
 * [Eclipse Plug-in](https://gnu-mcu-eclipse.github.io/plugins/download/)
 * [ARM toolchain](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/)
 * [J-Link](https://gnu-mcu-eclipse.github.io/debug/jlink/install/)
@@ -56,6 +56,14 @@ arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-
 
 The J-Link binaries are available at [SEGGER](http://www.segger.com/jlink-software.html). In our case, **DEB installer 64-bit** is to be downloaded from [https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb](https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb). And to install it, we **ONLY** need to double-click this **deb** file under Ubuntu.
 
+**J-Link** is defaultly installed under folder **/opt/SEGGER**.
+```
+/opt/SEGGER$ ls -ls
+total 4
+0 lrwxrwxrwx 1 root root   23 May 11 07:33 JLink -> /opt/SEGGER/JLink_V632c
+4 drwxr-xr-x 8 root root 4096 May 15 13:04 JLink_V632c
+```
+
 
 #### D. Install ST-Link
 
@@ -67,7 +75,7 @@ $ mkdir build
 $ cd build
 $ ccmake ../
 $ make -j8
-$ sudo checkinstall --fstrans=no
+$ sudo make install
 ```
 
 Four **exe** files are respectively installed as:
@@ -77,9 +85,37 @@ Four **exe** files are respectively installed as:
 * /usr/local/bin/stlink-gui
 
 
-### Step 3: Workspace Preference
+### Step 3: Window Preference
 
-Finally, we enable **save automatically before build** and **UTF-8** encoding within **Workspace Preference**.
+Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**->**Preferences**.
+
+
+#### A. C/C++ - MCU Packages
+
+![C/C++ - MCU Packages](./Preference_C++_MCU_Packages.jpg)
+
+
+#### B. MCU
+
+##### Global ARM Toolchains Paths
+
+![MCU - Global ARM Toolchains Paths](./Preference_MCU_Global_ARM_Toolchains_Paths.jpg)
+
+
+##### Global QEMU Path
+
+![MCU - Global QEMU Path](./Preference_MCU_Global_QEMU_Path.jpg)
+
+
+
+##### Global SEGGER J-Link Path
+
+![MCU - Global SEGGER J-Link Path](./Preference_MCU_Global_SEGGER_J-Link_Path.jpg)
+
+
+#### C. Workspace Preference
+
+Just enable **save automatically before build** and **UTF-8** encoding within **Workspace Preference**.
 
 ![Configuration in Workspace Preference](workspace_preference.jpg)
 

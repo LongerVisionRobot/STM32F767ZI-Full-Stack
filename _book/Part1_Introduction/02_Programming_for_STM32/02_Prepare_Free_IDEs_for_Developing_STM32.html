@@ -60,7 +60,7 @@
     <link rel="next" href="03_hello_world.html" />
     
     
-    <link rel="prev" href="01_STM32CubeMX_Installation.html" />
+    <link rel="prev" href="01_STM32Cube_MCU_Packages.html" />
     
 
     </head>
@@ -233,12 +233,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="01_STM32CubeMX_Installation.html">
+        <li class="chapter " data-level="2.3.1" data-path="01_STM32Cube_MCU_Packages.html">
             
-                <a href="01_STM32CubeMX_Installation.html">
+                <a href="01_STM32Cube_MCU_Packages.html">
             
                     
-                    2.1 STM32CubeMX Installation
+                    2.1 STM32CubeMX MCU Packages
             
                 </a>
             
@@ -359,7 +359,7 @@
 </blockquote>
 <p>The right-hand sidebar on <a href="https://gnu-mcu-eclipse.github.io/" target="_blank">GNU MCU Eclipse</a> clearly summarizes what&apos;s needed to be installed, as in the following image:</p>
 <p><img src="GNU_MCU_Eclipse_2B_Installed.jpg" alt="GNU MCU Eclipse: What&apos;s To Be Installed"></p>
-<p>According to our summation, five things are to be installed:</p>
+<p>According to our summation, four things are to be installed:</p>
 <ul>
 <li><a href="https://gnu-mcu-eclipse.github.io/plugins/download/" target="_blank">Eclipse Plug-in</a></li>
 <li><a href="https://gnu-mcu-eclipse.github.io/toolchain/arm/install/" target="_blank">ARM toolchain</a></li>
@@ -383,7 +383,12 @@ arm-none-eabi-c++filt    arm-none-eabi-gcc-ar     arm-none-eabi-gdb         arm-
 arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-none-eabi-objdump
 </code></pre><h4 id="c-install-j-link">C. Install J-Link</h4>
 <p>The J-Link binaries are available at <a href="http://www.segger.com/jlink-software.html" target="_blank">SEGGER</a>. In our case, <strong>DEB installer 64-bit</strong> is to be downloaded from <a href="https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb" target="_blank">https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb</a>. And to install it, we <strong>ONLY</strong> need to double-click this <strong>deb</strong> file under Ubuntu.</p>
-<h4 id="d-install-st-link">D. Install ST-Link</h4>
+<p><strong>J-Link</strong> is defaultly installed under folder <strong>/opt/SEGGER</strong>.</p>
+<pre><code>/opt/SEGGER$ ls -ls
+total 4
+0 lrwxrwxrwx 1 root root   23 May 11 07:33 JLink -&gt; /opt/SEGGER/JLink_V632c
+4 drwxr-xr-x 8 root root 4096 May 15 13:04 JLink_V632c
+</code></pre><h4 id="d-install-st-link">D. Install ST-Link</h4>
 <p>The reason why we need to install <a href="https://github.com/texane/stlink" target="_blank">ST-Link</a> is that <a href="../01_Getting_Started_with_STM32/02_Nucleo-144_STM32F767ZI.html">Nucleo-144 board with STM32F767ZI</a> comes with a ST-Link on board. The processes on how to checkout and build the source code are clearly displayed by the following commands:</p>
 <pre><code>$ git clone git@github.com:jiapei100/stlink.git
 $ cd stlink
@@ -391,7 +396,7 @@ $ mkdir build
 $ cd build
 $ ccmake ../
 $ make -j8
-$ sudo checkinstall --fstrans=no
+$ sudo make install
 </code></pre><p>Four <strong>exe</strong> files are respectively installed as:</p>
 <ul>
 <li>/usr/local/bin/st-flash</li>
@@ -399,8 +404,19 @@ $ sudo checkinstall --fstrans=no
 <li>/usr/local/bin/st-util</li>
 <li>/usr/local/bin/stlink-gui</li>
 </ul>
-<h3 id="step-3-workspace-preference">Step 3: Workspace Preference</h3>
-<p>Finally, we enable <strong>save automatically before build</strong> and <strong>UTF-8</strong> encoding within <strong>Workspace Preference</strong>.</p>
+<h3 id="step-3-window-preference">Step 3: Window Preference</h3>
+<p>Finally, we configure Eclipse IDE for STM32 MCU development. Click on <strong>Window</strong>-&gt;<strong>Preferences</strong>.</p>
+<h4 id="a-cc---mcu-packages">A. C/C++ - MCU Packages</h4>
+<p><img src="Preference_C++_MCU_Packages.jpg" alt="C/C++ - MCU Packages"></p>
+<h4 id="b-mcu">B. MCU</h4>
+<h5 id="global-arm-toolchains-paths">Global ARM Toolchains Paths</h5>
+<p><img src="Preference_MCU_Global_ARM_Toolchains_Paths.jpg" alt="MCU - Global ARM Toolchains Paths"></p>
+<h5 id="global-qemu-path">Global QEMU Path</h5>
+<p><img src="Preference_MCU_Global_QEMU_Path.jpg" alt="MCU - Global QEMU Path"></p>
+<h5 id="global-segger-j-link-path">Global SEGGER J-Link Path</h5>
+<p><img src="Preference_MCU_Global_SEGGER_J-Link_Path.jpg" alt="MCU - Global SEGGER J-Link Path"></p>
+<h4 id="c-workspace-preference">C. Workspace Preference</h4>
+<p>Just enable <strong>save automatically before build</strong> and <strong>UTF-8</strong> encoding within <strong>Workspace Preference</strong>.</p>
 <p><img src="workspace_preference.jpg" alt="Configuration in Workspace Preference"></p>
 <h2 id="222-sw4stm32-system-workbench-for-stm32">2.2.2 SW4STM32 (System Workbench for STM32)</h2>
 <p>To install the free IDE <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">System Workbench for STM32</a>, <a href="http://www.st.com/en/development-tools/sw4stm32.html" target="_blank">ST&apos;s official website</a> is redirected to <a href="http://www.openstm32.org/" target="_blank">OpenSTM32</a>. Users must first register on <a href="http://www.openstm32.org/" target="_blank">OpenSTM32</a>, and then strictly follow <a href="http://www.openstm32.org/Installing%2BSystem%2BWorkbench%2Bfor%2BSTM32" target="_blank">Installing System Workbench for STM32</a>.</p>
@@ -432,7 +448,7 @@ $ sudo checkinstall --fstrans=no
 
             
                 
-                <a href="01_STM32CubeMX_Installation.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 STM32CubeMX Installation">
+                <a href="01_STM32Cube_MCU_Packages.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 STM32CubeMX MCU Packages">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -448,7 +464,7 @@ $ sudo checkinstall --fstrans=no
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"next":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},"previous":{"title":"2.1 STM32CubeMX Installation","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32CubeMX_Installation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","mtime":"2018-05-15T19:40:10.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T19:42:12.219Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"next":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","ref":"Part1_Introduction/02_Programming_for_STM32/03_hello_world.md","articles":[]},"previous":{"title":"2.1 STM32CubeMX MCU Packages","level":"2.3.1","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md","ref":"Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","mtime":"2018-05-15T21:58:57.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T21:59:31.712Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
