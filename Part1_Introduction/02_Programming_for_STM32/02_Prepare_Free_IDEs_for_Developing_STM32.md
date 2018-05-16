@@ -92,7 +92,16 @@ Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**
 
 #### A. C/C++ - MCU Packages
 
+
+#### MCU Packages
+
 ![C/C++ - MCU Packages](./Preference_C++_MCU_Packages.jpg)
+
+#### MCU Packages Repositories
+
+According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs-manager/](https://gnu-mcu-eclipse.github.io/plugins/packs-manager/), we need to input [http://keil.com/pack/index.idx](http://keil.com/pack/index.idx) into **URL** in dialog **MCU Packages - Repositories**, as follows:
+
+![C/C++ - MCU Packages Repositories](Preference_C++_MCU_Packages_Repositories.jpg)
 
 
 #### B. MCU
@@ -100,6 +109,16 @@ Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**
 ##### Global ARM Toolchains Paths
 
 ![MCU - Global ARM Toolchains Paths](./Preference_MCU_Global_ARM_Toolchains_Paths.jpg)
+
+
+**Alternatively**, you can configure **OpenOCD** toolchain instead.
+
+![MCU - Global OpenOCD Path](./Preference_MCU_Global_OpenOCD_Path.jpg)
+
+
+**Alternatively**, you can configure **RISC-V** toolchain instead.
+
+![MCU - Global RISC-V Toolchains Paths](./Preference_MCU_Global_RISC-V_Toolchains_Paths.jpg)
 
 
 ##### Global QEMU Path
