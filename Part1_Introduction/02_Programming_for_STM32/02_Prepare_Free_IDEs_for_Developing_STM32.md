@@ -101,11 +101,15 @@ Then double click **Packs**, and click the **refresh button** to **Update the pa
 ![Perspective - Packs: Operation In Progress](./Perspective_Packs_Operation_In_Progress.jpg)
 
 
-#### C. Packs: Operation In Progress
+#### C. Packs: Install Required Packs
 
 After around half an hour on my computer, and multiple times of clicking **Retry** and **Ignore**, I got the following views:
 
 ![Perspective - Packs: STM32F7](Perspective_Packs_STM32F7.jpg)
+
+It's **NOT** hard to find **STMicroelectronics**->**STM32F7 Series** and have **STM32F7xx_DFP** installed. The **NEWEST** version 2.9.0 will be installed by default.
+
+![Perspective - Packs: STM32F77xx_DFP Installed](Perspective_Packs_STM32F77xx_DFP_Installed.jpg)
 
 
 ### Step 4: Window Preference
@@ -122,7 +126,7 @@ Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**
 
 #### MCU Packages Repositories
 
-According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs-manager/](https://gnu-mcu-eclipse.github.io/plugins/packs-manager/), we need to input [http://keil.com/pack/index.idx](http://keil.com/pack/index.idx) into **URL** in dialog **MCU Packages - Repositories**, as follows:
+According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs-manager/](https://gnu-mcu-eclipse.github.io/plugins/packs-manager/), we need to input [http://www.keil.com/pack/index.pidx](http://www.keil.com/pack/index.pidx) into **URL** in dialog **MCU Packages - Repositories**, as follows:
 
 ![C/C++ - MCU Packages Repositories](Preference_C++_MCU_Packages_Repositories.jpg)
 

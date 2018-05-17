@@ -161,10 +161,19 @@ To build the project successfully, we need to set **--specs=nosys.specs**. But, 
 ![--specs=nosys.specs](Eclipse_09_Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg)
 
 
+Then, we **Apply**.
+
+
+#### D. Devices STM32F767ZI
+
+Then, we move to **Devices** tab, and we found **STM32F767ZI**.
+
+![--specs=nosys.specs](Settings_Devices_STM32F767ZI.jpg)
+
 Then, we **Apply and Close**.
 
 
-#### D. Build Project Again - Successful
+#### E. Build Project Again - Successful
 
 ![Eclipse Successfully Built](Eclipse_10_Successfully_Built.jpg)
 
