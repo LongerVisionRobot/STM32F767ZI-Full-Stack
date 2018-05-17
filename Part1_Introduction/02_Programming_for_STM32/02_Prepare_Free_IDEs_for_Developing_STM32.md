@@ -85,7 +85,30 @@ Four **exe** files are respectively installed as:
 * /usr/local/bin/stlink-gui
 
 
-### Step 3: Window Preference
+### Step 3: Update Packs
+
+#### A. Packs: Open Perspective
+
+Click on **Window**->**Perspective**->**Open Perspective**->**Other**, you will see the following perspective:
+
+![Open Perspective](Perspective_Packs_Open_Perspective.jpg)
+
+
+#### B. Packs: Operation In Progress
+
+Then double click **Packs**, and click the **refresh button** to **Update the packages definitions from all repositories**.
+
+![Perspective - Packs: Operation In Progress](./Perspective_Packs_Operation_In_Progress.jpg)
+
+
+#### C. Packs: Operation In Progress
+
+After around half an hour on my computer, and multiple times of clicking **Retry** and **Ignore**, I got the following views:
+
+![Perspective - Packs: STM32F7](Perspective_Packs_STM32F7.jpg)
+
+
+### Step 4: Window Preference
 
 Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**->**Preferences**.
 
