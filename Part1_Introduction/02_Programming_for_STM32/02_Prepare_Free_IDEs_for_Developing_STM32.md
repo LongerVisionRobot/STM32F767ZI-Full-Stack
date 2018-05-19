@@ -111,6 +111,16 @@ It's **NOT** hard to find **STMicroelectronics**->**STM32F7 Series** and have **
 
 ![Perspective - Packs: STM32F77xx_DFP Installed](Perspective_Packs_STM32F77xx_DFP_Installed.jpg)
 
+<span style="color:red">**Note**: You might meet this **ERROR** while installing a pack.</span>
+<span style="color:red">**java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty**</span>
+
+<span style="color:red">This is a bug from Java, and the solution can be found on [https://github.com/mikaelhg/broken-docker-jdk9-cacerts](https://github.com/mikaelhg/broken-docker-jdk9-cacerts). Be more specific, the solutions is:</span>
+
+```
+$ /usr/bin/printf '\xfe\xed\xfe\xed\x00\x00\x00\x02\x00\x00\x00\x00\xe2\x68\x6e\x45\xfb\x43\xdf\xa4\xd9\x92\xdd\x41\xce\xb6\xb2\x1c\x63\x30\xd7\x92' > /etc/ssl/certs/java/cacerts
+$ /var/lib/dpkg/info/ca-certificates-java.postinst configure
+```
+
 
 ### Step 4: Window Preference
 

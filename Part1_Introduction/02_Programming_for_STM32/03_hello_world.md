@@ -168,7 +168,7 @@ Then, we **Apply**.
 
 Then, we move to **Devices** tab, and we found **STM32F767ZI**.
 
-![--specs=nosys.specs](Settings_Devices_STM32F767ZI.jpg)
+![Devices STM32F767ZI](Settings_Devices_STM32F767ZI.jpg)
 
 Then, we **Apply and Close**.
 
