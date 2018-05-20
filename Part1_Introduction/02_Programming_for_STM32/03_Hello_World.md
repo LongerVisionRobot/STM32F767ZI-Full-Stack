@@ -129,7 +129,6 @@ Then, we **Build Project**,
 
 
 
-
 ## 2.3.2 Print Out "Hello World"
 
 ### Steps to Build "Hello World"

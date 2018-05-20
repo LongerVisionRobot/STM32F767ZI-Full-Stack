@@ -14,6 +14,6 @@
 2. [Chapter 2. Programming for STM32](Part1_Introduction/02_Programming_for_STM32/README.md)
     * [2.1 STM32CubeMX MCU Packages](Part1_Introduction/02_Programming_for_STM32/01_STM32Cube_MCU_Packages.md)
     * [2.2 Prepare Free IDEs for Developing STM32](Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md)
-    * [2.3 FIRST STM32 Project - Hello World](Part1_Introduction/02_Programming_for_STM32/03_hello_world.md)
+    * [2.3 FIRST STM32 Project - Hello World](Part1_Introduction/02_Programming_for_STM32/03_Hello_World.md)
     * [2.4 QEMU Simulation](Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md)
     * [2.5 Test On STM32F767ZI](Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md)
