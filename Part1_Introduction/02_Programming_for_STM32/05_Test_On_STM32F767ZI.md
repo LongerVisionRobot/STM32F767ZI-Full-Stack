@@ -1,3 +1,3 @@
-# 2.5 Test On STM32F767ZI
+# 2.5 Test On Nucleo-144 STM32F767ZI
 
 
