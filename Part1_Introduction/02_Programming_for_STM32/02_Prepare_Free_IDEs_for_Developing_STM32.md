@@ -107,7 +107,7 @@ After around half an hour on my computer, and multiple times of clicking **Retry
 
 ![Perspective - Packs: STM32F7](Perspective_Packs_STM32F7.jpg)
 
-It's **NOT** hard to find **STMicroelectronics**->**STM32F7 Series** and have **STM32F7xx_DFP** installed. The **NEWEST** version 2.9.0 will be installed by default.
+It's **NOT** hard to find **STMicroelectronics**->**STM32F7 Series** and have **STM32F7xx_DFP** installed. The **NEWEST** version 2.10.0 will be installed by default.
 
 ![Perspective - Packs: STM32F77xx_DFP Installed](Perspective_Packs_STM32F77xx_DFP_Installed.jpg)
 

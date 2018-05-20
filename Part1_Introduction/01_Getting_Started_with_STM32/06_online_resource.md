@@ -30,6 +30,9 @@
 ## 1.6.6 Communities
 * [ST Community](https://community.st.com/)
 * [OpenSTM32 Community](http://www.openstm32.org/forums)
+* [STMCU](http://www.stmcu.org/)
+* [OpenEdv](http://www.openedv.com/forum.php)
+* [fireBBS](http://firebbs.cn/forum.php)
 * [PlatformIO Community](https://community.platformio.org/)
 
 ## 1.6.7 Popular Ecosystem Forums
