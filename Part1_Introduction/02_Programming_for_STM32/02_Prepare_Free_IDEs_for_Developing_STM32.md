@@ -93,21 +93,31 @@ Four **exe** files are respectively installed as:
 
 ### Step 3: Update Packs
 
-#### A. Packs: Open Perspective
+
+#### A. Set MCU Packages and Package Repositories
+
+![C/C++ - MCU Packages](./Preference_C++_MCU_Packages.jpg)
+
+According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs-manager/](https://gnu-mcu-eclipse.github.io/plugins/packs-manager/), we need to input [http://www.keil.com/pack/index.pidx](http://www.keil.com/pack/index.pidx) into **URL** in dialog **MCU Packages - Repositories**, as follows:
+
+![C/C++ - MCU Packages Repositories](Preference_C++_MCU_Packages_Repositories.jpg)
+
+
+#### B. Packs: Open Perspective
 
 Click on **Window**->**Perspective**->**Open Perspective**->**Other**, you will see the following perspective:
 
 ![Open Perspective](Perspective_Packs_Open_Perspective.jpg)
 
 
-#### B. Packs: Operation In Progress
+#### C. Packs: Operation In Progress
 
 Then double click **Packs**, and click the **refresh button** to **Update the packages definitions from all repositories**.
 
 ![Perspective - Packs: Operation In Progress](./Perspective_Packs_Operation_In_Progress.jpg)
 
 
-#### C. Packs: Install Required Packs
+#### D. Packs: Install Required Packs
 
 After around half an hour on my computer, and multiple times of clicking **Retry** and **Ignore**, I got the following views:
 
@@ -133,21 +143,7 @@ $ /var/lib/dpkg/info/ca-certificates-java.postinst configure
 Finally, we configure Eclipse IDE for STM32 MCU development. Click on **Window**->**Preferences**.
 
 
-#### A. C/C++ - MCU Packages
-
-
-#### MCU Packages
-
-![C/C++ - MCU Packages](./Preference_C++_MCU_Packages.jpg)
-
-#### MCU Packages Repositories
-
-According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs-manager/](https://gnu-mcu-eclipse.github.io/plugins/packs-manager/), we need to input [http://www.keil.com/pack/index.pidx](http://www.keil.com/pack/index.pidx) into **URL** in dialog **MCU Packages - Repositories**, as follows:
-
-![C/C++ - MCU Packages Repositories](Preference_C++_MCU_Packages_Repositories.jpg)
-
-
-#### B. MCU
+#### A. MCU Configuration
 
 ##### Global ARM Toolchains Paths
 
@@ -175,7 +171,7 @@ According to the description on [https://gnu-mcu-eclipse.github.io/plugins/packs
 ![MCU - Global SEGGER J-Link Path](./Preference_MCU_Global_SEGGER_J-Link_Path.jpg)
 
 
-#### C. Workspace Preference
+#### B. Workspace Preference
 
 Just enable **save automatically before build** and **UTF-8** encoding within **Workspace Preference**.
 
