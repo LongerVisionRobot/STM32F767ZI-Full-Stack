@@ -692,10 +692,40 @@ st-util 1.4.0-37-g065a475
 </code></pre><h3 id="stlink-gui">stlink-gui</h3>
 <p>Command <strong>stlink-gui</strong> will pop up a dialog automatically:</p>
 <p><img src="stlink-gui_init.jpg" alt="STLink Gui Initialization"></p>
+<p>Then we click on the <strong>Connect</strong> button:</p>
 <p><img src="stlink-gui_Connect.jpg" alt="STLink Gui Connecting with Board"></p>
+<p>After a while, we can see the data in tab <strong>Device Memory</strong> after the device is connected:</p>
 <p><img src="stlink-gui_Connected.jpg" alt="STLink Gui Connected"></p>
+<p>Then we click on <strong>No file</strong> and load the built <strong>.elf</strong> file <strong>F767ZI_Blinky.elf</strong>:</p>
+<p><img src="stlink-gui_Loading_F767ZI_Blinky.jpg" alt="STLink Gui Load F767ZI_Blinky.elf"></p>
+<p>After loading <strong>F767ZI_Blinky.elf</strong>, we can see the data in tab <strong>F767ZI_Blinky.elf</strong>:</p>
+<p><img src="stlink-gui_F767ZI_Blinky.elf_Loaded.jpg" alt="STLink Gui F767ZI_Blinky.elf Loaded"></p>
+<p>And now it&apos;s the time to flash the loaded file <strong>F767ZI_Blinky.elf</strong> down to board <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a>:</p>
+<p><img src="stlink-gui_F767ZI_Flash_device.jpg" alt="STLink Gui Flash F767ZI_Blinky.elf to Device"></p>
+<p>Flashing</p>
+<p><img src="stlink-gui_F767ZI_Flashing.jpg" alt="STLink Gui Flashing"></p>
+<p>We also notice the situation change from within <strong>bash</strong> as follows:</p>
+<pre><code>$ Gtk-Message: 18:40:02.578: GtkDialog mapped without a transient parent. This is discouraged.
+Flash page at addr: 0x08040000 erasedEraseFlash - Sector:0x5 Size:0x40000 
+enabling 32-bit flash writes
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 27496
+</code></pre><p>After finishing flashing the data onto the device, we can even <strong>Export device memory</strong> into a particular file. Here, we can see, the data is successfully exported.</p>
+<p><img src="stlink-gui_F767ZI_Export_successful.jpg" alt="STLink Gui Flash F767ZI_Blinky.elf to Device"></p>
+<p>Finally, we can disconnect the device after flashing.</p>
+<p><img src="stlink-gui_F767ZI_Disconnected.jpg" alt="STLink Gui Disconnected"></p>
+<p><span style="color:red">Clearly, <strong>stlink-gui</strong> is a <strong>GUI</strong> application to flash built <strong>.elf</strong> down to the device (a development board with some particular MCU).</span></p>
 <h3 id="st-flash">st-flash</h3>
-<p>As for <strong>st-flash</strong>: </p>
+<p>Unlike <strong>stlink-gui</strong>, <strong>st-flash</strong> is a command line application to flash built <strong>.bin</strong> down to the embedded device. But, we need firstly build <strong>.bin</strong> file out from <strong>.elf</strong> file. Here, we need to use the command <strong>arm-none-eabi-objcopy</strong>.</p>
+<pre><code>$ arm-none-eabi-objcopy -S -O binary F767ZI_Blinky.elf F767ZI_Blinky.bin
+</code></pre><p>Afterwards, we investigate how to use <strong>st-flash</strong> :</p>
 <pre><code>$ st-flash --help
 invalid command line
 stlinkv1 command line: ./st-flash [--debug] [--reset] [--format &lt;format&gt;] [--flash=&lt;fsize&gt;] {read|write} /dev/sgX &lt;path&gt; &lt;addr&gt; &lt;size&gt;
@@ -707,7 +737,38 @@ stlinkv2 command line: ./st-flash [--debug] [--serial &lt;serial&gt;] reset
                        fsize: Use decimal, octal or hex by prefix 0xXXX for hex, optionally followed by k=KB, or m=MB (eg. --flash=128k)
                        Format may be &apos;binary&apos; (default) or &apos;ihex&apos;, although &lt;addr&gt; must be specified for binary format only.
                        ./st-flash [--version]
-</code></pre>
+</code></pre><p>We can also refer to <a href="https://github.com/texane/stlink/blob/master/doc/man/st-flash.md" target="_blank">st-flash documentation</a> for more details.</p>
+<h5 id="usage-1-flash-bin-file-to-device">Usage 1: Flash .bin file to device</h5>
+<pre><code>$ st-flash write firmware.bin 0x8000000
+</code></pre><h5 id="usage-2-read-bin-from-device-4096-bytes">Usage 2: Read .bin from device (4096 bytes)</h5>
+<pre><code>$ st-flash read firmware.bin 0x8000000 4096
+</code></pre><h5 id="erase-firmware-from-device">Erase firmware from device</h5>
+<pre><code>$ st-flash erase
+</code></pre><h4 id="step-1-erase-memory-on-device">Step 1: Erase Memory on Device</h4>
+<pre><code>$ st-flash erase
+st-flash 1.4.0-37-g065a475
+2018-05-21T02:40:59 INFO common.c: Loading device parameters....
+2018-05-21T02:40:59 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T02:40:59 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+Mass erasing..............
+</code></pre><h4 id="step-2-flash-f767ziblinkybin-to-nucleo-144-stm32f767zi">Step 2: Flash F767ZI_Blinky.bin to <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a></h4>
+<pre><code>$ st-flash write F767ZI_Blinky.bin 0x8000000
+st-flash 1.4.0-37-g065a475
+2018-05-21T02:47:51 INFO common.c: Loading device parameters....
+2018-05-21T02:47:51 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T02:47:51 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-21T02:47:51 INFO common.c: Attempting to write 9108 (0x2394) bytes to stm32 address: 134217728 (0x8000000)
+Flash page at addr: 0x08000000 erased
+2018-05-21T02:47:51 INFO common.c: Finished erasing 1 pages of 32768 (0x8000) bytes
+2018-05-21T02:47:51 INFO common.c: Starting Flash write for F2/F4/L4
+2018-05-21T02:47:51 INFO flash_loader.c: Successfully loaded flash loader in sram
+enabling 32-bit flash writes
+size: 9108
+2018-05-21T02:47:51 INFO common.c: Starting verification of write complete
+2018-05-21T02:47:51 INFO common.c: Flash written and verified! jolly good!
+</code></pre><h2 id="254-on-board-debugging">2.5.4 On-board Debugging</h2>
+<p>According to <a href="https://github.com/texane/stlink/blob/master/doc/tutorial.md" target="_blank">ST-Link Tutorial</a></p>
+
                                 
                                 </section>
                             
@@ -750,7 +811,7 @@ stlinkv2 command line: ./st-flash [--debug] [--serial &lt;serial&gt;] reset
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T06:32:28.740Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T07:09:16.845Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T10:10:14.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T10:07:25.355Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -758,6 +819,10 @@ stlinkv2 command line: ./st-flash [--debug] [--serial &lt;serial&gt;] reset
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

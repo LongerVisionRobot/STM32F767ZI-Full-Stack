@@ -317,17 +317,71 @@ Command **stlink-gui** will pop up a dialog automatically:
 
 ![STLink Gui Initialization](stlink-gui_init.jpg)
 
+Then we click on the **Connect** button:
 
 ![STLink Gui Connecting with Board](stlink-gui_Connect.jpg)
 
+After a while, we can see the data in tab **Device Memory** after the device is connected:
 
 ![STLink Gui Connected](stlink-gui_Connected.jpg)
+
+Then we click on **No file** and load the built **.elf** file **F767ZI_Blinky.elf**:
+
+![STLink Gui Load F767ZI_Blinky.elf](stlink-gui_Loading_F767ZI_Blinky.jpg)
+
+After loading **F767ZI_Blinky.elf**, we can see the data in tab **F767ZI_Blinky.elf**:
+
+![STLink Gui F767ZI_Blinky.elf Loaded](stlink-gui_F767ZI_Blinky.elf_Loaded.jpg)
+
+
+And now it's the time to flash the loaded file **F767ZI_Blinky.elf** down to board [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html):
+
+![STLink Gui Flash F767ZI_Blinky.elf to Device](stlink-gui_F767ZI_Flash_device.jpg)
+
+Flashing
+
+![STLink Gui Flashing](stlink-gui_F767ZI_Flashing.jpg)
+
+We also notice the situation change from within **bash** as follows:
+
+```
+$ Gtk-Message: 18:40:02.578: GtkDialog mapped without a transient parent. This is discouraged.
+Flash page at addr: 0x08040000 erasedEraseFlash - Sector:0x5 Size:0x40000 
+enabling 32-bit flash writes
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 32768
+size: 27496
+```
+
+
+After finishing flashing the data onto the device, we can even **Export device memory** into a particular file. Here, we can see, the data is successfully exported.
+
+![STLink Gui Flash F767ZI_Blinky.elf to Device](stlink-gui_F767ZI_Export_successful.jpg)
+
+Finally, we can disconnect the device after flashing.
+
+![STLink Gui Disconnected](stlink-gui_F767ZI_Disconnected.jpg)
+
+
+<span style="color:red">Clearly, **stlink-gui** is a **GUI** application to flash built **.elf** down to the device (a development board with some particular MCU).</span>
 
 
 
 ### st-flash
 
-As for **st-flash**: 
+Unlike **stlink-gui**, **st-flash** is a command line application to flash built **.bin** down to the embedded device. But, we need firstly build **.bin** file out from **.elf** file. Here, we need to use the command **arm-none-eabi-objcopy**.
+
+```
+$ arm-none-eabi-objcopy -S -O binary F767ZI_Blinky.elf F767ZI_Blinky.bin
+```
+
+Afterwards, we investigate how to use **st-flash** :
 
 ```
 $ st-flash --help
@@ -342,4 +396,62 @@ stlinkv2 command line: ./st-flash [--debug] [--serial <serial>] reset
                        Format may be 'binary' (default) or 'ihex', although <addr> must be specified for binary format only.
                        ./st-flash [--version]
 ```
+
+
+We can also refer to [st-flash documentation](https://github.com/texane/stlink/blob/master/doc/man/st-flash.md) for more details.
+
+##### Usage 1: Flash .bin file to device
+
+```
+$ st-flash write firmware.bin 0x8000000
+```
+
+##### Usage 2: Read .bin from device (4096 bytes)
+
+```
+$ st-flash read firmware.bin 0x8000000 4096
+```
+
+##### Erase firmware from device
+
+```
+$ st-flash erase
+```
+
+
+#### Step 1: Erase Memory on Device
+
+```
+$ st-flash erase
+st-flash 1.4.0-37-g065a475
+2018-05-21T02:40:59 INFO common.c: Loading device parameters....
+2018-05-21T02:40:59 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T02:40:59 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+Mass erasing..............
+```
+
+#### Step 2: Flash F767ZI_Blinky.bin to [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html)
+
+```
+$ st-flash write F767ZI_Blinky.bin 0x8000000
+st-flash 1.4.0-37-g065a475
+2018-05-21T02:47:51 INFO common.c: Loading device parameters....
+2018-05-21T02:47:51 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T02:47:51 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-21T02:47:51 INFO common.c: Attempting to write 9108 (0x2394) bytes to stm32 address: 134217728 (0x8000000)
+Flash page at addr: 0x08000000 erased
+2018-05-21T02:47:51 INFO common.c: Finished erasing 1 pages of 32768 (0x8000) bytes
+2018-05-21T02:47:51 INFO common.c: Starting Flash write for F2/F4/L4
+2018-05-21T02:47:51 INFO flash_loader.c: Successfully loaded flash loader in sram
+enabling 32-bit flash writes
+size: 9108
+2018-05-21T02:47:51 INFO common.c: Starting verification of write complete
+2018-05-21T02:47:51 INFO common.c: Flash written and verified! jolly good!
+```
+
+
+
+## 2.5.4 On-board Debugging
+
+According to [ST-Link Tutorial](https://github.com/texane/stlink/blob/master/doc/tutorial.md), we need to run commands **st-util** and **arm-none-eabi-gdb F767ZI_Blinky.elf** in sequence.
 
