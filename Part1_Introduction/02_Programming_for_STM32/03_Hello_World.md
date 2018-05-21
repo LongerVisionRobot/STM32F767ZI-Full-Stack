@@ -3,11 +3,9 @@
 As any other programming languages, our first STM32 Project is also "Hello World", without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.
 
 
-## 2.3.1 Create a Project Under Eclipse
+## 2.3.1 Steps to Build Our First Empty Project
 
-### Steps to Build Our First Empty Project
-
-#### A. Create an Empty Project
+### A. Create an Empty Project
 
 **File**->**New**->**C/C++ Project**, then click on **C++ Managed Build**:
 
@@ -16,7 +14,7 @@ As any other programming languages, our first STM32 Project is also "Hello World
 Then, click **Next**.
 
 
-#### B. Select STM32F7XX C/C++ Project
+### B. Select STM32F7XX C/C++ Project
 
 In the dialog **C++ Project**,
 * under **Project type:**->**Executable**, select **STM32F7XX C/C++ Project**
@@ -27,7 +25,7 @@ In the dialog **C++ Project**,
 Then, click **Next**.
 
 
-#### C. Target Processor Settings
+### C. Target Processor Settings
 
 In the dialog **Target Processor Settings**， 
 * under **Chip family**, select **STM32F767xx**
@@ -41,21 +39,21 @@ In the dialog **Target Processor Settings**，
 Then, click **Next**.
 
 
-#### D. Folder settings
+### D. Folder settings
 
 ![Eclipse Folders Settings](Eclipse_04_Folders_Settings.jpg)
 
 Just click **Next**.
 
 
-#### E. Select Configurations
+### E. Select Configurations
 
 ![Eclipse Select Configurations](Eclipse_05_Select_Configurations.jpg)
 
 Just click **Next**.
 
 
-#### F. GNU ARM Cross Toolchain
+### F. GNU ARM Cross Toolchain
 
 In the dialog **GNU ARM Cross Toolchain**,
 * under **Toolchain name:**, select **GNU MCU Eclipse ARM Embedded GCC (arm-none-eabi-gcc)**
@@ -75,7 +73,7 @@ arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-
 Finally, click **Finish**.
 
 
-#### G. Build the Empty Project
+### G. Build the Empty Project
 
 Now, let's have a look at the empty project's code:
 
@@ -129,12 +127,10 @@ Then, we **Build Project**,
 
 
 
-## 2.3.2 Print Out "Hello World"
-
-### Steps to Build "Hello World"
+## 2.3.2 Steps to Build "Hello World"
 
 
-#### A. Code Modification
+### A. Code Modification
 
 In file **main.cpp**, add one line **printf("Hello World!\n");** under **Add your code here.** as:
 
@@ -144,14 +140,14 @@ printf("Hello World!\n");
 ```
 
 
-#### B. Build Project - Failure
+### B. Build Project - Failure
 
 ![Eclipse Built Failure](Eclipse_08_Built_Failure.jpg)
 
 Why? In the next step, we are going to solve the problem.
 
 
-#### C. --specs=nosys.specs
+### C. --specs=nosys.specs
 
 To build the project successfully, we need to set **--specs=nosys.specs**. But, how to?
 **HelloWorld**->**Properties**->**C/C++ Build**->**Settings**->**Tool Settings**->**GNU ARM Cross C++ Linker**->**Miscellaneous**, and tick **Do not use syscalls(-specs=nosys.specs)**.
@@ -163,7 +159,7 @@ To build the project successfully, we need to set **--specs=nosys.specs**. But, 
 Then, we **Apply**.
 
 
-#### D. Devices STM32F767ZI
+### D. Devices STM32F767ZI
 
 Then, we move to **Devices** tab, and we found **STM32F767ZI**.
 
@@ -172,7 +168,7 @@ Then, we move to **Devices** tab, and we found **STM32F767ZI**.
 Then, we **Apply and Close**.
 
 
-#### E. Build Project Again - Successful
+### E. Build Project Again - Successful
 
 ![Eclipse Successfully Built](Eclipse_10_Successfully_Built.jpg)
 

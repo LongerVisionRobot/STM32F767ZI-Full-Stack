@@ -63,7 +63,7 @@ Since in our course, we are using [GNU MCU Eclipse Plugin](https://gnu-mcu-eclip
 
 ## 2.4.2 Test QEMU
 
-### Step 1: Build Project
+### Step 1: Create and Build Project
 
 As mentioned above, since current [GNU MCU Eclipse QEMU](https://gnu-mcu-eclipse.github.io/qemu/) does **NOT** support **STM32F767ZI** yet, we have to carry our QEMU test with another board. Here, we pick up board [STM32F429I-Discovery](http://www.st.com/en/evaluation-tools/32f429idiscovery.html) with MCU [STM32F429ZI](http://www.st.com/en/microcontrollers/stm32f429zi.html) to carry out QEMU test.
 
@@ -73,7 +73,8 @@ Similar to [previous section](../02_Programming_for_STM32/03_Hello_World.md), le
 
 ![QEMU Target Processor Settings](QEMU_Target_Processor_Settings.jpg)
 
-Then, we **Build Project** with any [ARM Embedded GCC Toolchain](../01_Getting_Started_with_STM32/06_online_resource.md). In our case, we build our code with [GNU MCU Eclipse ARM Embedded GCC Toolchain](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases).
+Then, we **Build Project** with any [ARM Embedded GCC Toolchain](../01_Getting_Started_with_STM32/06_online_resource.md). In our case, we build our code with **Debug** configuration with [GNU MCU Eclipse ARM Embedded GCC Toolchain](https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases).
+
 
 ```
 12:38:20 **** Build of configuration Debug for project F429ZI_Blinky ****

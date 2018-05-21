@@ -350,13 +350,12 @@
                                 
                                 <h1 id="23-first-stm32-project---hello-world">2.3 FIRST STM32 Project - &quot;Hello World&quot;</h1>
 <p>As any other programming languages, our first STM32 Project is also &quot;Hello World&quot;, without hardware wiring. Using GNU MCU Eclipse to develop STM32 follows the same way to develop any other projects under Eclipse.</p>
-<h2 id="231-create-a-project-under-eclipse">2.3.1 Create a Project Under Eclipse</h2>
-<h3 id="steps-to-build-our-first-empty-project">Steps to Build Our First Empty Project</h3>
-<h4 id="a-create-an-empty-project">A. Create an Empty Project</h4>
+<h2 id="231-steps-to-build-our-first-empty-project">2.3.1 Steps to Build Our First Empty Project</h2>
+<h3 id="a-create-an-empty-project">A. Create an Empty Project</h3>
 <p><strong>File</strong>-&gt;<strong>New</strong>-&gt;<strong>C/C++ Project</strong>, then click on <strong>C++ Managed Build</strong>:</p>
 <p><img src="Eclipse_01_New_Project.jpg" alt="Eclipse A New Project"></p>
 <p>Then, click <strong>Next</strong>.</p>
-<h4 id="b-select-stm32f7xx-cc-project">B. Select STM32F7XX C/C++ Project</h4>
+<h3 id="b-select-stm32f7xx-cc-project">B. Select STM32F7XX C/C++ Project</h3>
 <p>In the dialog <strong>C++ Project</strong>,</p>
 <ul>
 <li>under <strong>Project type:</strong>-&gt;<strong>Executable</strong>, select <strong>STM32F7XX C/C++ Project</strong></li>
@@ -364,7 +363,7 @@
 </ul>
 <p><img src="Eclipse_02_New_Project_STM32F7XX.jpg" alt="Eclipse Create A STM32F7XX Project"></p>
 <p>Then, click <strong>Next</strong>.</p>
-<h4 id="c-target-processor-settings">C. Target Processor Settings</h4>
+<h3 id="c-target-processor-settings">C. Target Processor Settings</h3>
 <p>In the dialog <strong>Target Processor Settings</strong>&#xFF0C; </p>
 <ul>
 <li>under <strong>Chip family</strong>, select <strong>STM32F767xx</strong></li>
@@ -375,13 +374,13 @@
 </ul>
 <p><img src="Eclipse_03_Target_Processor_Settings.jpg" alt="Eclipse Target Processor Settings"></p>
 <p>Then, click <strong>Next</strong>.</p>
-<h4 id="d-folder-settings">D. Folder settings</h4>
+<h3 id="d-folder-settings">D. Folder settings</h3>
 <p><img src="Eclipse_04_Folders_Settings.jpg" alt="Eclipse Folders Settings"></p>
 <p>Just click <strong>Next</strong>.</p>
-<h4 id="e-select-configurations">E. Select Configurations</h4>
+<h3 id="e-select-configurations">E. Select Configurations</h3>
 <p><img src="Eclipse_05_Select_Configurations.jpg" alt="Eclipse Select Configurations"></p>
 <p>Just click <strong>Next</strong>.</p>
-<h4 id="f-gnu-arm-cross-toolchain">F. GNU ARM Cross Toolchain</h4>
+<h3 id="f-gnu-arm-cross-toolchain">F. GNU ARM Cross Toolchain</h3>
 <p>In the dialog <strong>GNU ARM Cross Toolchain</strong>,</p>
 <ul>
 <li>under <strong>Toolchain name:</strong>, select <strong>GNU MCU Eclipse ARM Embedded GCC (arm-none-eabi-gcc)</strong></li>
@@ -396,7 +395,7 @@ arm-none-eabi-cpp        arm-none-eabi-gcc-nm     arm-none-eabi-gdb-py      arm-
 </ul>
 <p><img src="Eclipse_06_GNU_ARM_Cross_Toolchain.jpg" alt="Eclipse GNU ARM Cross Toolchain"></p>
 <p>Finally, click <strong>Finish</strong>.</p>
-<h4 id="g-build-the-empty-project">G. Build the Empty Project</h4>
+<h3 id="g-build-the-empty-project">G. Build the Empty Project</h3>
 <p>Now, let&apos;s have a look at the empty project&apos;s code:</p>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -441,25 +440,24 @@ main(int argc, char* argv[])
 // ----------------------------------------------------------------------------
 </code></pre><p>Then, we <strong>Build Project</strong>,</p>
 <p><img src="Eclipse_07_Built_Empty_Project.jpg" alt="Eclipse Built Empty Project"></p>
-<h2 id="232-print-out-hello-world">2.3.2 Print Out &quot;Hello World&quot;</h2>
-<h3 id="steps-to-build-hello-world">Steps to Build &quot;Hello World&quot;</h3>
-<h4 id="a-code-modification">A. Code Modification</h4>
+<h2 id="232-steps-to-build-hello-world">2.3.2 Steps to Build &quot;Hello World&quot;</h2>
+<h3 id="a-code-modification">A. Code Modification</h3>
 <p>In file <strong>main.cpp</strong>, add one line <strong>printf(&quot;Hello World!\n&quot;);</strong> under <strong>Add your code here.</strong> as:</p>
 <pre><code>// Add your code here.
 printf(&quot;Hello World!\n&quot;);
-</code></pre><h4 id="b-build-project---failure">B. Build Project - Failure</h4>
+</code></pre><h3 id="b-build-project---failure">B. Build Project - Failure</h3>
 <p><img src="Eclipse_08_Built_Failure.jpg" alt="Eclipse Built Failure"></p>
 <p>Why? In the next step, we are going to solve the problem.</p>
-<h4 id="c---specsnosysspecs">C. --specs=nosys.specs</h4>
+<h3 id="c---specsnosysspecs">C. --specs=nosys.specs</h3>
 <p>To build the project successfully, we need to set <strong>--specs=nosys.specs</strong>. But, how to?
 <strong>HelloWorld</strong>-&gt;<strong>Properties</strong>-&gt;<strong>C/C++ Build</strong>-&gt;<strong>Settings</strong>-&gt;<strong>Tool Settings</strong>-&gt;<strong>GNU ARM Cross C++ Linker</strong>-&gt;<strong>Miscellaneous</strong>, and tick <strong>Do not use syscalls(-specs=nosys.specs)</strong>.</p>
 <p><img src="Eclipse_09_Project_Properties_C++Build_Settings_ToolSettings_Linker_Miscellaneous.jpg" alt="--specs=nosys.specs"></p>
 <p>Then, we <strong>Apply</strong>.</p>
-<h4 id="d-devices-stm32f767zi">D. Devices STM32F767ZI</h4>
+<h3 id="d-devices-stm32f767zi">D. Devices STM32F767ZI</h3>
 <p>Then, we move to <strong>Devices</strong> tab, and we found <strong>STM32F767ZI</strong>.</p>
 <p><img src="Settings_Devices_STM32F767ZI.jpg" alt="Devices STM32F767ZI"></p>
 <p>Then, we <strong>Apply and Close</strong>.</p>
-<h4 id="e-build-project-again---successful">E. Build Project Again - Successful</h4>
+<h3 id="e-build-project-again---successful">E. Build Project Again - Successful</h3>
 <p><img src="Eclipse_10_Successfully_Built.jpg" alt="Eclipse Successfully Built"></p>
 
                                 
@@ -504,7 +502,7 @@ printf(&quot;Hello World!\n&quot;);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"next":{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"previous":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_Hello_World.md","mtime":"2018-05-20T22:33:57.609Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-20T23:59:11.554Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 FIRST STM32 Project - Hello World","level":"2.3.3","depth":2,"next":{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"previous":{"title":"2.2 Prepare Free IDEs for Developing STM32","level":"2.3.2","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","ref":"Part1_Introduction/02_Programming_for_STM32/02_Prepare_Free_IDEs_for_Developing_STM32.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/03_Hello_World.md","mtime":"2018-05-21T00:44:29.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T00:59:41.721Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
