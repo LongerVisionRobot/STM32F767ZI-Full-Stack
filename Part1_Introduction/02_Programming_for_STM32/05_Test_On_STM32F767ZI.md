@@ -544,3 +544,23 @@ Afterward, we **continue** in **gdb**.
 Continuing.
 ```
 
+**Tab 1** change accordingly.
+```
+semihosting: unsupported call 0x15
+main(argc=1, argv=[""]);
+Hello ARM World!
+semihosting: unsupported call 0xc
+semihosting: unsupported call 0x9
+System clock: 192000000 Hz
+Second 1
+Second 2
+Second 3
+Second 4
+Second 5
+Second 6
+semihosting: unsupported call 0x18
+```
+
+
+And, finally, let's have a look at the video of the Blinky example on our **STM32F767ZI** board.
+[![Blinky on STM32F767ZI](Blinky_on_STM32F767ZI.jpg)](https://youtu.be/tHQDhOTX3M4)
