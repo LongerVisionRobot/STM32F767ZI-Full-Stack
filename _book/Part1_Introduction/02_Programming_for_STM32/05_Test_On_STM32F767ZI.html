@@ -358,6 +358,15 @@
 ...
 Bus 001 Device 005: ID 0483:374b STMicroelectronics ST-LINK/V2.1 (Nucleo-F103RB)
 ...
+</code></pre><p>If we had [ST-Link successfully installed, we can also demonstrate </p>
+<pre><code>$ st-info --probe
+Found 1 stlink programmers
+ serial: 303636454646333333303336343334
+openocd: &quot;\x30\x36\x36\x45\x46\x46\x33\x33\x33\x30\x33\x36\x34\x33\x34&quot;
+  flash: 2097152 (pagesize: 2048)
+   sram: 524288
+ chipid: 0x0451
+  descr: F76xxx device
 </code></pre><ul>
 <li>On the other side, plugging in the other USB port for <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> will be demonstrated by our test code.</li>
 </ul>
@@ -555,6 +564,7 @@ Finished building: F767ZI_Blinky.siz
 
 17:57:34 Build Finished (took 3s.375ms)
 </code></pre><h2 id="253-flash-built-elf-onto-nucleo-144-stm32f767zi">2.5.3 Flash Built .elf onto Nucleo-144 STM32F767ZI</h2>
+<p>As we mentioned in <a href="04_QEMU_Simulation.html">previous section</a>, the <strong>NEWEST</strong> <a href="https://gnu-mcu-eclipse.github.io/qemu/" target="_blank">GNU MCU Eclipse QEMU</a> does <strong>NOT</strong> support <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> yet. Therefore, we are going to flash <strong>F767ZI_Blinky.elf</strong> directly onto <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> for our test.</p>
 
                                 
                                 </section>
@@ -594,7 +604,7 @@ Finished building: F767ZI_Blinky.siz
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI","level":"2.3.5","depth":2,"previous":{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T00:59:33.309Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T00:59:41.721Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI","level":"2.3.5","depth":2,"previous":{"title":"2.4 QEMU Simulation","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T01:26:51.897Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T01:00:19.023Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -602,6 +612,10 @@ Finished building: F767ZI_Blinky.siz
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

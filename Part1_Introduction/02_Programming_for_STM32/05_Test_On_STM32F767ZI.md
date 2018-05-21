@@ -17,6 +17,20 @@ $ lsusb
 Bus 001 Device 005: ID 0483:374b STMicroelectronics ST-LINK/V2.1 (Nucleo-F103RB)
 ...
 ```
+
+If we had [ST-Link](https://github.com/texane/stlink) successfully installed, we can also demonstrate its existance by command **st-info --probe**.
+
+```
+$ st-info --probe
+Found 1 stlink programmers
+ serial: 303636454646333333303336343334
+openocd: "\x30\x36\x36\x45\x46\x46\x33\x33\x33\x30\x33\x36\x34\x33\x34"
+  flash: 2097152 (pagesize: 2048)
+   sram: 524288
+ chipid: 0x0451
+  descr: F76xxx device
+```
+
 * On the other side, plugging in the other USB port for [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) will be demonstrated by our test code.
 
 
@@ -220,5 +234,7 @@ Finished building: F767ZI_Blinky.siz
 
 
 ## 2.5.3 Flash Built .elf onto Nucleo-144 STM32F767ZI
+
+As we mentioned in [previous section](../02_Programming_for_STM32/04_QEMU_Simulation.md), the **NEWEST** [GNU MCU Eclipse QEMU](https://gnu-mcu-eclipse.github.io/qemu/) does **NOT** support [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) yet. Therefore, we are going to flash **F767ZI_Blinky.elf** directly onto [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) for our test.
 
 
