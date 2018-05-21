@@ -17,3 +17,8 @@
     * [2.3 FIRST STM32 Project - Hello World](Part1_Introduction/02_Programming_for_STM32/03_Hello_World.md)
     * [2.4 QEMU Simulation - Blinky](Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md)
     * [2.5 Test On STM32F767ZI - Blinky](Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md)
+* [Part 2 - Sensors](Part2_Sensors/README.md)
+* [Part 3 - Motors](Part3_Motors/README.md)
+* [Part 4 - Display](Part4_Display/README.md)
+* [Part 5 - Communication](Part5_Communication/README.md)
+* [Part 6 - Mini Drone & Remote Controller](Part6_MiniDrone/README.md)
