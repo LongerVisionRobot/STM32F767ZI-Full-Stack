@@ -767,7 +767,7 @@ size: 9108
 2018-05-21T02:47:51 INFO common.c: Starting verification of write complete
 2018-05-21T02:47:51 INFO common.c: Flash written and verified! jolly good!
 </code></pre><h2 id="254-on-board-debugging">2.5.4 On-board Debugging</h2>
-<p>According to <a href="https://github.com/texane/stlink/blob/master/doc/tutorial.md" target="_blank">ST-Link Tutorial</a></p>
+<p>According to <a href="https://github.com/texane/stlink/blob/master/doc/tutorial.md" target="_blank">ST-Link Tutorial</a>, we need to run commands <strong>st-util</strong> and <strong>arm-none-eabi-gdb F767ZI_Blinky.elf</strong> in sequence.</p>
 
                                 
                                 </section>
@@ -811,7 +811,7 @@ size: 9108
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T10:10:14.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T10:07:25.355Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T10:12:13.446Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T19:28:46.342Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -819,10 +819,6 @@ size: 9108
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
