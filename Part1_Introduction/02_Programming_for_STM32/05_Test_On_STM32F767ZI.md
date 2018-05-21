@@ -455,3 +455,41 @@ size: 9108
 
 According to [ST-Link Tutorial](https://github.com/texane/stlink/blob/master/doc/tutorial.md), we need to run commands **st-util** and **arm-none-eabi-gdb F767ZI_Blinky.elf** in sequence.
 
+### First Tab: st-util
+
+```
+$ st-util 
+st-util 1.4.0-37-g065a475
+2018-05-21T13:03:43 INFO common.c: Loading device parameters....
+2018-05-21T13:03:43 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T13:03:43 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-21T13:03:43 INFO gdb-server.c: Chip ID is 00000451, Core ID is  5ba02477.
+2018-05-21T13:03:43 INFO gdb-server.c: Chip clidr: 09000003, I-Cache: off, D-Cache: off
+2018-05-21T13:03:43 INFO gdb-server.c:  cache: LoUU: 1, LoC: 1, LoUIS: 0
+2018-05-21T13:03:43 INFO gdb-server.c:  cache: ctr: 8303c003, DminLine: 32 bytes, IminLine: 32 bytes
+2018-05-21T13:03:43 INFO gdb-server.c: D-Cache L0: 2018-05-21T13:03:43 INFO gdb-server.c: f00fe019 LineSize: 8, ways: 4, sets: 128 (width: 12)
+2018-05-21T13:03:43 INFO gdb-server.c: I-Cache L0: 2018-05-21T13:03:43 INFO gdb-server.c: f01fe009 LineSize: 8, ways: 2, sets: 256 (width: 13)
+2018-05-21T13:03:43 INFO gdb-server.c: Listening at *:4242...
+```
+
+### Second Tab: arm-none-eabi-gdb
+
+```
+$ arm-none-eabi-gdb F767ZI_Blinky.elf 
+GNU gdb (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 8.0.50.20171128-git
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-linux-gnu --target=arm-none-eabi".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from F767ZI_Blinky.elf...done.
+```
+
