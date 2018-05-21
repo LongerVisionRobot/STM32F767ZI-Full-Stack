@@ -453,27 +453,29 @@ size: 9108
 
 ## 2.5.4 On-board Debugging
 
-According to [ST-Link Tutorial](https://github.com/texane/stlink/blob/master/doc/tutorial.md), we need to run commands **st-util** and **arm-none-eabi-gdb F767ZI_Blinky.elf** in sequence.
+According to [ST-Link Tutorial](https://github.com/texane/stlink/blob/master/doc/tutorial.md), we need to run commands both **st-util** and **arm-none-eabi-gdb** at the same time.
 
-### First Tab: st-util
+### st-util
 
+#### Tab 1:
 ```
-$ st-util 
+$ st-util --semihosting
 st-util 1.4.0-37-g065a475
-2018-05-21T13:03:43 INFO common.c: Loading device parameters....
-2018-05-21T13:03:43 INFO common.c: Device connected is: F76xxx device, id 0x10016451
-2018-05-21T13:03:43 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
-2018-05-21T13:03:43 INFO gdb-server.c: Chip ID is 00000451, Core ID is  5ba02477.
-2018-05-21T13:03:43 INFO gdb-server.c: Chip clidr: 09000003, I-Cache: off, D-Cache: off
-2018-05-21T13:03:43 INFO gdb-server.c:  cache: LoUU: 1, LoC: 1, LoUIS: 0
-2018-05-21T13:03:43 INFO gdb-server.c:  cache: ctr: 8303c003, DminLine: 32 bytes, IminLine: 32 bytes
-2018-05-21T13:03:43 INFO gdb-server.c: D-Cache L0: 2018-05-21T13:03:43 INFO gdb-server.c: f00fe019 LineSize: 8, ways: 4, sets: 128 (width: 12)
-2018-05-21T13:03:43 INFO gdb-server.c: I-Cache L0: 2018-05-21T13:03:43 INFO gdb-server.c: f01fe009 LineSize: 8, ways: 2, sets: 256 (width: 13)
-2018-05-21T13:03:43 INFO gdb-server.c: Listening at *:4242...
+2018-05-21T13:30:18 INFO common.c: Loading device parameters....
+2018-05-21T13:30:18 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-21T13:30:18 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-21T13:30:18 INFO gdb-server.c: Chip ID is 00000451, Core ID is  5ba02477.
+2018-05-21T13:30:18 INFO gdb-server.c: Chip clidr: 09000003, I-Cache: off, D-Cache: off
+2018-05-21T13:30:18 INFO gdb-server.c:  cache: LoUU: 1, LoC: 1, LoUIS: 0
+2018-05-21T13:30:18 INFO gdb-server.c:  cache: ctr: 8303c003, DminLine: 32 bytes, IminLine: 32 bytes
+2018-05-21T13:30:18 INFO gdb-server.c: D-Cache L0: 2018-05-21T13:30:18 INFO gdb-server.c: f00fe019 LineSize: 8, ways: 4, sets: 128 (width: 12)
+2018-05-21T13:30:18 INFO gdb-server.c: I-Cache L0: 2018-05-21T13:30:18 INFO gdb-server.c: f01fe009 LineSize: 8, ways: 2, sets: 256 (width: 13)
+2018-05-21T13:30:18 INFO gdb-server.c: Listening at *:4242...
 ```
 
-### Second Tab: arm-none-eabi-gdb
+### arm-none-eabi-gdb
 
+#### Tab 2:
 ```
 $ arm-none-eabi-gdb F767ZI_Blinky.elf 
 GNU gdb (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 8.0.50.20171128-git
@@ -491,5 +493,54 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from F767ZI_Blinky.elf...done.
+```
+
+We then listen to the port **4242** specified in **st-util**.
+#### Tab 2:
+```
+(gdb) target extended localhost:4242
+Remote debugging using localhost:4242
+Reset_Handler () at ../system/src/cortexm/exception_handlers.c:53
+53      {
+```
+
+Meanwhile, **Tab 1** change a bit accordingly.
+#### Tab 1: 
+```
+2018-05-21T13:32:42 INFO gdb-server.c: Found 8 hw breakpoint registers
+2018-05-21T13:32:42 INFO gdb-server.c: GDB connected.
+```
+
+Then, we load the data from **gdb**.
+#### Tab 2:
+```
+(gdb) load
+Loading section .isr_vector, size 0x458 lma 0x8000000
+Loading section .inits, size 0x2c lma 0x8000458
+Loading section .text, size 0x30e6 lma 0x8000490
+Loading section .data, size 0x1dc lma 0x8003578
+Start address 0x80001f8, load size 14150
+Transfer rate: 10 KB/sec, 3537 bytes/write.
+```
+
+**Tab 1** change accordingly at the same time.
+#### Tab 1: 
+```
+2018-05-21T13:48:22 INFO common.c: Attempting to write 32768 (0x8000) bytes to stm32 address: 134217728 (0x8000000)
+Flash page at addr: 0x08000000 erased
+2018-05-21T13:48:22 INFO common.c: Finished erasing 1 pages of 32768 (0x8000) bytes
+2018-05-21T13:48:22 INFO common.c: Starting Flash write for F2/F4/L4
+2018-05-21T13:48:22 INFO flash_loader.c: Successfully loaded flash loader in sram
+enabling 32-bit flash writes
+size: 32768
+2018-05-21T13:48:22 INFO common.c: Starting verification of write complete
+2018-05-21T13:48:23 INFO common.c: Flash written and verified! jolly good!
+```
+
+Afterward, we **continue** in **gdb**.
+#### Tab 2:
+```
+(gdb) continue
+Continuing.
 ```
 
