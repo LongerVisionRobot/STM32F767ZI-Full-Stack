@@ -632,12 +632,81 @@ Finished building: F767ZI_Blinky.siz
 17:57:34 Build Finished (took 3s.375ms)
 </code></pre><h2 id="253-flash-built-elf-onto-nucleo-144-stm32f767zi">2.5.3 Flash Built .elf onto Nucleo-144 STM32F767ZI</h2>
 <p>As we mentioned in <a href="04_QEMU_Simulation.html">previous section</a>, the <strong>NEWEST</strong> <a href="https://gnu-mcu-eclipse.github.io/qemu/" target="_blank">GNU MCU Eclipse QEMU</a> does <strong>NOT</strong> support <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> yet. Therefore, we are going to flash <strong>F767ZI_Blinky.elf</strong> directly onto <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> for our test.</p>
-<p>We first have a look at how many <strong>ST</strong> tools have been installed:</p>
+<p>We <strong>first</strong> have a look at how many <strong>ST</strong> tools have been installed:</p>
 <pre><code>$ ls -ls /usr/local/bin/st*
  16 -rwxr-xr-x 1 root root  14312 May 18 23:16 /usr/local/bin/st-flash
  12 -rwxr-xr-x 1 root root  10216 May 18 23:16 /usr/local/bin/st-info
 104 -rwxr-xr-x 1 root root 104960 May 18 23:16 /usr/local/bin/stlink-gui
  52 -rwxr-xr-x 1 root root  51544 May 18 23:16 /usr/local/bin/st-util
+</code></pre><p>And, let&apos;s try out each <strong>ST</strong> tool one by one.</p>
+<h3 id="st-info">st-info</h3>
+<p>Tested in the above already, and its <strong>ONLY</strong> usage is:</p>
+<pre><code>$ st-info --probe
+Found 1 stlink programmers
+ serial: 303636454646333333303336343334
+openocd: &quot;\x30\x36\x36\x45\x46\x46\x33\x33\x33\x30\x33\x36\x34\x33\x34&quot;
+  flash: 2097152 (pagesize: 2048)
+   sram: 524288
+ chipid: 0x0451
+  descr: F76xxx device
+</code></pre><h3 id="st-util">st-util</h3>
+<p>Let&apos;s have a look at how can we use <strong>st-util</strong> by <strong>help</strong>.</p>
+<pre><code>$ st-util --help
+st-util - usage:
+
+  -h, --help            Print this help
+  -V, --version         Print the version
+  -vXX, --verbose=XX    Specify a specific verbosity level (0..99)
+  -v, --verbose         Specify generally verbose logging
+  -s X, --stlink_version=X
+                        Choose what version of stlink to use, (defaults to 2)
+  -1, --stlinkv1        Force stlink version 1
+  -p 4242, --listen_port=1234
+                        Set the gdb server listen port. (default port: 4242)
+  -m, --multi
+                        Set gdb server to extended mode.
+                        st-util will continue listening for connections after disconnect.
+  -n, --no-reset
+                        Do not reset board on connection.
+  --semihosting
+                        Enable semihosting support.
+  --serial &lt;serial&gt;
+                        Use a specific serial number.
+
+The STLINKv2 device to use can be specified in the environment
+variable STLINK_DEVICE on the format &lt;USB_BUS&gt;:&lt;USB_ADDR&gt;.
+</code></pre><p>Then, we print out the version as:</p>
+<pre><code>$ st-util -V
+st-util: invalid option -- &apos;V&apos;
+st-util 1.4.0-37-g065a475
+2018-05-20T22:42:43 INFO common.c: Loading device parameters....
+2018-05-20T22:42:43 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-20T22:42:43 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-20T22:42:43 INFO gdb-server.c: Chip ID is 00000451, Core ID is  5ba02477.
+2018-05-20T22:42:43 INFO gdb-server.c: Chip clidr: 09000003, I-Cache: off, D-Cache: off
+2018-05-20T22:42:43 INFO gdb-server.c:  cache: LoUU: 1, LoC: 1, LoUIS: 0
+2018-05-20T22:42:43 INFO gdb-server.c:  cache: ctr: 8303c003, DminLine: 32 bytes, IminLine: 32 bytes
+2018-05-20T22:42:43 INFO gdb-server.c: D-Cache L0: 2018-05-20T22:42:43 INFO gdb-server.c: f00fe019 LineSize: 8, ways: 4, sets: 128 (width: 12)
+2018-05-20T22:42:43 INFO gdb-server.c: I-Cache L0: 2018-05-20T22:42:43 INFO gdb-server.c: f01fe009 LineSize: 8, ways: 2, sets: 256 (width: 13)
+2018-05-20T22:42:43 INFO gdb-server.c: Listening at *:4242...
+</code></pre><h3 id="stlink-gui">stlink-gui</h3>
+<p>Command <strong>stlink-gui</strong> will pop up a dialog automatically:</p>
+<p><img src="stlink-gui_init.jpg" alt="STLink Gui Initialization"></p>
+<p><img src="stlink-gui_Connect.jpg" alt="STLink Gui Connecting with Board"></p>
+<p><img src="stlink-gui_Connected.jpg" alt="STLink Gui Connected"></p>
+<h3 id="st-flash">st-flash</h3>
+<p>As for <strong>st-flash</strong>: </p>
+<pre><code>$ st-flash --help
+invalid command line
+stlinkv1 command line: ./st-flash [--debug] [--reset] [--format &lt;format&gt;] [--flash=&lt;fsize&gt;] {read|write} /dev/sgX &lt;path&gt; &lt;addr&gt; &lt;size&gt;
+stlinkv1 command line: ./st-flash [--debug] /dev/sgX erase
+stlinkv2 command line: ./st-flash [--debug] [--reset] [--serial &lt;serial&gt;] [--format &lt;format&gt;] [--flash=&lt;fsize&gt;] {read|write} &lt;path&gt; &lt;addr&gt; &lt;size&gt;
+stlinkv2 command line: ./st-flash [--debug] [--serial &lt;serial&gt;] erase
+stlinkv2 command line: ./st-flash [--debug] [--serial &lt;serial&gt;] reset
+                       Use hex format for addr, &lt;serial&gt; and &lt;size&gt;.
+                       fsize: Use decimal, octal or hex by prefix 0xXXX for hex, optionally followed by k=KB, or m=MB (eg. --flash=128k)
+                       Format may be &apos;binary&apos; (default) or &apos;ihex&apos;, although &lt;addr&gt; must be specified for binary format only.
+                       ./st-flash [--version]
 </code></pre>
                                 
                                 </section>
@@ -681,7 +750,7 @@ Finished building: F767ZI_Blinky.siz
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T03:25:18.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T05:17:50.378Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"next":{"title":"Part 2 - Sensors","level":"2.4","depth":1,"path":"Part2_Sensors/README.md","ref":"Part2_Sensors/README.md","articles":[]},"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T06:32:28.740Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T07:08:09.375Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

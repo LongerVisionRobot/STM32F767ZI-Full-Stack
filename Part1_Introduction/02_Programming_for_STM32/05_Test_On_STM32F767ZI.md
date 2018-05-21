@@ -237,7 +237,7 @@ Finished building: F767ZI_Blinky.siz
 
 As we mentioned in [previous section](../02_Programming_for_STM32/04_QEMU_Simulation.md), the **NEWEST** [GNU MCU Eclipse QEMU](https://gnu-mcu-eclipse.github.io/qemu/) does **NOT** support [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) yet. Therefore, we are going to flash **F767ZI_Blinky.elf** directly onto [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) for our test.
 
-We first have a look at how many **ST** tools have been installed:
+We **first** have a look at how many **ST** tools have been installed:
 ```
 $ ls -ls /usr/local/bin/st*
  16 -rwxr-xr-x 1 root root  14312 May 18 23:16 /usr/local/bin/st-flash
@@ -245,3 +245,101 @@ $ ls -ls /usr/local/bin/st*
 104 -rwxr-xr-x 1 root root 104960 May 18 23:16 /usr/local/bin/stlink-gui
  52 -rwxr-xr-x 1 root root  51544 May 18 23:16 /usr/local/bin/st-util
 ```
+
+And, let's try out each **ST** tool one by one.
+
+### st-info
+
+Tested in the above already, and its **ONLY** usage is:
+```
+$ st-info --probe
+Found 1 stlink programmers
+ serial: 303636454646333333303336343334
+openocd: "\x30\x36\x36\x45\x46\x46\x33\x33\x33\x30\x33\x36\x34\x33\x34"
+  flash: 2097152 (pagesize: 2048)
+   sram: 524288
+ chipid: 0x0451
+  descr: F76xxx device
+```
+
+### st-util
+
+Let's have a look at how can we use **st-util** by **help**.
+```
+$ st-util --help
+st-util - usage:
+
+  -h, --help            Print this help
+  -V, --version         Print the version
+  -vXX, --verbose=XX    Specify a specific verbosity level (0..99)
+  -v, --verbose         Specify generally verbose logging
+  -s X, --stlink_version=X
+                        Choose what version of stlink to use, (defaults to 2)
+  -1, --stlinkv1        Force stlink version 1
+  -p 4242, --listen_port=1234
+                        Set the gdb server listen port. (default port: 4242)
+  -m, --multi
+                        Set gdb server to extended mode.
+                        st-util will continue listening for connections after disconnect.
+  -n, --no-reset
+                        Do not reset board on connection.
+  --semihosting
+                        Enable semihosting support.
+  --serial <serial>
+                        Use a specific serial number.
+
+The STLINKv2 device to use can be specified in the environment
+variable STLINK_DEVICE on the format <USB_BUS>:<USB_ADDR>.
+```
+
+Then, we print out the version as:
+```
+$ st-util -V
+st-util: invalid option -- 'V'
+st-util 1.4.0-37-g065a475
+2018-05-20T22:42:43 INFO common.c: Loading device parameters....
+2018-05-20T22:42:43 INFO common.c: Device connected is: F76xxx device, id 0x10016451
+2018-05-20T22:42:43 INFO common.c: SRAM size: 0x80000 bytes (512 KiB), Flash: 0x200000 bytes (2048 KiB) in pages of 2048 bytes
+2018-05-20T22:42:43 INFO gdb-server.c: Chip ID is 00000451, Core ID is  5ba02477.
+2018-05-20T22:42:43 INFO gdb-server.c: Chip clidr: 09000003, I-Cache: off, D-Cache: off
+2018-05-20T22:42:43 INFO gdb-server.c:  cache: LoUU: 1, LoC: 1, LoUIS: 0
+2018-05-20T22:42:43 INFO gdb-server.c:  cache: ctr: 8303c003, DminLine: 32 bytes, IminLine: 32 bytes
+2018-05-20T22:42:43 INFO gdb-server.c: D-Cache L0: 2018-05-20T22:42:43 INFO gdb-server.c: f00fe019 LineSize: 8, ways: 4, sets: 128 (width: 12)
+2018-05-20T22:42:43 INFO gdb-server.c: I-Cache L0: 2018-05-20T22:42:43 INFO gdb-server.c: f01fe009 LineSize: 8, ways: 2, sets: 256 (width: 13)
+2018-05-20T22:42:43 INFO gdb-server.c: Listening at *:4242...
+
+```
+
+
+### stlink-gui
+
+Command **stlink-gui** will pop up a dialog automatically:
+
+![STLink Gui Initialization](stlink-gui_init.jpg)
+
+
+![STLink Gui Connecting with Board](stlink-gui_Connect.jpg)
+
+
+![STLink Gui Connected](stlink-gui_Connected.jpg)
+
+
+
+### st-flash
+
+As for **st-flash**: 
+
+```
+$ st-flash --help
+invalid command line
+stlinkv1 command line: ./st-flash [--debug] [--reset] [--format <format>] [--flash=<fsize>] {read|write} /dev/sgX <path> <addr> <size>
+stlinkv1 command line: ./st-flash [--debug] /dev/sgX erase
+stlinkv2 command line: ./st-flash [--debug] [--reset] [--serial <serial>] [--format <format>] [--flash=<fsize>] {read|write} <path> <addr> <size>
+stlinkv2 command line: ./st-flash [--debug] [--serial <serial>] erase
+stlinkv2 command line: ./st-flash [--debug] [--serial <serial>] reset
+                       Use hex format for addr, <serial> and <size>.
+                       fsize: Use decimal, octal or hex by prefix 0xXXX for hex, optionally followed by k=KB, or m=MB (eg. --flash=128k)
+                       Format may be 'binary' (default) or 'ihex', although <addr> must be specified for binary format only.
+                       ./st-flash [--version]
+```
+
