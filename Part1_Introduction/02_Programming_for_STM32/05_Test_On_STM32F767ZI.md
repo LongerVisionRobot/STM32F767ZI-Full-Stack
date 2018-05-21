@@ -1,6 +1,6 @@
 # 2.5 Test On Nucleo-144 STM32F767ZI
 
-Finally, we come to test out some examples on board [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html).
+**Finally**, we come to test out some examples on board [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html).
 
 
 ## 2.5.1 Plug in Nucleo-144 STM32F767ZI
@@ -237,4 +237,11 @@ Finished building: F767ZI_Blinky.siz
 
 As we mentioned in [previous section](../02_Programming_for_STM32/04_QEMU_Simulation.md), the **NEWEST** [GNU MCU Eclipse QEMU](https://gnu-mcu-eclipse.github.io/qemu/) does **NOT** support [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) yet. Therefore, we are going to flash **F767ZI_Blinky.elf** directly onto [Nucleo-144 STM32F767ZI](http://www.st.com/en/evaluation-tools/nucleo-f767zi.html) for our test.
 
-
+We first have a look at how many **ST** tools have been installed:
+```
+$ ls -ls /usr/local/bin/st*
+ 16 -rwxr-xr-x 1 root root  14312 May 18 23:16 /usr/local/bin/st-flash
+ 12 -rwxr-xr-x 1 root root  10216 May 18 23:16 /usr/local/bin/st-info
+104 -rwxr-xr-x 1 root root 104960 May 18 23:16 /usr/local/bin/stlink-gui
+ 52 -rwxr-xr-x 1 root root  51544 May 18 23:16 /usr/local/bin/st-util
+```

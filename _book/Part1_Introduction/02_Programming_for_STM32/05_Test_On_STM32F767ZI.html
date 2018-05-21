@@ -347,7 +347,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="25-test-on-nucleo-144-stm32f767zi">2.5 Test On Nucleo-144 STM32F767ZI</h1>
-<p>Finally, we come to test out some examples on board <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a>.</p>
+<p><strong>Finally</strong>, we come to test out some examples on board <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a>.</p>
 <h2 id="251-plug-in-nucleo-144-stm32f767zi">2.5.1 Plug in Nucleo-144 STM32F767ZI</h2>
 <p>We first plug in the board <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> as follows:</p>
 <p><img src="STM32F767ZI_STLink_2USB.jpg" alt="STM32F767ZI STLink - 2 USB Ports"></p>
@@ -565,7 +565,13 @@ Finished building: F767ZI_Blinky.siz
 17:57:34 Build Finished (took 3s.375ms)
 </code></pre><h2 id="253-flash-built-elf-onto-nucleo-144-stm32f767zi">2.5.3 Flash Built .elf onto Nucleo-144 STM32F767ZI</h2>
 <p>As we mentioned in <a href="04_QEMU_Simulation.html">previous section</a>, the <strong>NEWEST</strong> <a href="https://gnu-mcu-eclipse.github.io/qemu/" target="_blank">GNU MCU Eclipse QEMU</a> does <strong>NOT</strong> support <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> yet. Therefore, we are going to flash <strong>F767ZI_Blinky.elf</strong> directly onto <a href="http://www.st.com/en/evaluation-tools/nucleo-f767zi.html" target="_blank">Nucleo-144 STM32F767ZI</a> for our test.</p>
-
+<p>We first have a look at how many <strong>ST</strong> tools have been installed:</p>
+<pre><code>$ ls -ls /usr/local/bin/st*
+ 16 -rwxr-xr-x 1 root root  14312 May 18 23:16 /usr/local/bin/st-flash
+ 12 -rwxr-xr-x 1 root root  10216 May 18 23:16 /usr/local/bin/st-info
+104 -rwxr-xr-x 1 root root 104960 May 18 23:16 /usr/local/bin/stlink-gui
+ 52 -rwxr-xr-x 1 root root  51544 May 18 23:16 /usr/local/bin/st-util
+</code></pre>
                                 
                                 </section>
                             
@@ -604,7 +610,7 @@ Finished building: F767ZI_Blinky.siz
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T01:27:19.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T03:20:53.081Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Test On STM32F767ZI - Blinky","level":"2.3.5","depth":2,"previous":{"title":"2.4 QEMU Simulation - Blinky","level":"2.3.4","depth":2,"path":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","ref":"Part1_Introduction/02_Programming_for_STM32/04_QEMU_Simulation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md","mtime":"2018-05-21T03:25:17.610Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-21T03:21:39.430Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
