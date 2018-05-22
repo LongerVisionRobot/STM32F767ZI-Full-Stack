@@ -13,7 +13,7 @@ On the drone board, one very important chip is integrated:
 
 <center>Item</center> | <center>No. of Pieces</center> | <center>Model</center> | <center>Features</center>     
 ------- | ------- | -------- | -------------
-<center>IMU</center> | <center>1</center> | <center>MPU 6050</center> | 6 Degrees, gyro + accelerator
+<center>IMU</center> | <center>1</center> | <center> MPU 6050 </center> | 6 Degrees, gyro + accelerator
 
 
 ## 1.3.2. Drone Controller
@@ -34,5 +34,5 @@ On the remote controller, two very important parts are integrated:
 
 <center>Item</center> | <center>No. of Pieces</center> | <center>Model</center> | <center>Features</center>    
 ------- | ------- | -------- | -------------
-<center>Monitor</center> | <center>1</center> | <center></center> | 
-<center>Joystick</center> | <center>2</center> | <center></center> | 
+<center>Monitor</center> | <center>1</center> | <center>12864</center> | 0.96 inches, 2 Colors: Blue/Yellow, OLED
+<center>Joystick</center> | <center>2</center> | <center>103</center> | Regular, 3D
