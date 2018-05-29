@@ -19,7 +19,7 @@
     * [2.5 Test On STM32F767ZI - Blinky](Part1_Introduction/02_Programming_for_STM32/05_Test_On_STM32F767ZI.md)
 * [Part 2 - Sensors](Part2_Sensors/README.md)
 3. [Chapter 3. Inertial Measurement Unit](Part2_Sensors/03_Sensors/README.md)
-    * [3.1 Accelerator](Part2_Sensors/03_Sensors/01_Accelerator.md)
+    * [3.1 IMU MPU-6050](Part2_Sensors/03_Sensors/01_imu_mpu6050.md)
     * [3.2 Camera](Part2_Sensors/03_Sensors/02_Camera.md)
 * [Part 3 - Motors](Part3_Motors/README.md)
 * [Chapter 4. Motors](Part3_Motors/04_DC_Motor/README.md)
